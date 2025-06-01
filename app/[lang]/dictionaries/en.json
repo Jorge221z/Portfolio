@@ -82,11 +82,11 @@
     "description1": "I'm a full stack developer with over 5 years of experience creating innovative web and mobile applications. I love turning complex problems into simple, beautiful solutions that users love.",
     "description2": "My expertise spans across modern frontend frameworks, robust backend systems, and cross-platform mobile development. I'm always eager to learn new technologies and tackle challenging projects.",
     "location": "Yecla, Murcia, Spain",
-    "availability": "Available for freelance",
-    "cleanCode": "Clean Code",
-    "mobileFirst": "Mobile First",
-    "scalable": "Scalable",
-    "optimized": "Optimized"
+    "availability": "Available for relocation",
+    "dockerization": "Dockerization",
+    "restApiDevelopment": "REST API Development",
+    "deploymentScripting": "Deployment & Scripting",
+    "aiImplementation": "AI Implementation"
   },
   "skills": {
     "badge": "Tech Stack",
@@ -100,28 +100,16 @@
     "badge": "Work History",
     "title": "Professional Experience",
     "exp1": {
-      "title": "Senior Full Stack Developer",
-      "company": "Tech Solutions Inc.",
-      "period": "2022 - Present",
-      "description": "Lead development of scalable web applications and mobile solutions for enterprise clients."
-    },
-    "exp2": {
-      "title": "Mobile Developer",
-      "company": "StartupXYZ",
-      "period": "2020 - 2022",
-      "description": "Developed cross-platform mobile applications using React Native and Flutter."
-    },
-    "exp3": {
-      "title": "Frontend Developer",
-      "company": "Digital Agency",
-      "period": "2018 - 2020",
-      "description": "Created responsive web interfaces and improved user experience for various clients."
+      "title": "Plugin Developer & Web Solutions Specialist",
+      "company": "Skills Divers",
+      "period": "February 2025 - Present",
+      "description": "Development of specialized native plugins for Moodle and WordPress, as well as robust web applications with Laravel for European projects. Collaboration in international teams using English as working language, focused on creating innovative educational solutions and custom content management platforms."
     }
   },
   "contact": {
     "badge": "Contact",
     "title": "Get In Touch",
-    "description": "I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!",
+    "description": "I'm always interested in hearing about new opportunities and exciting projects. I have full availability to relocate to any city. Whether you have a question or just want to say hi, feel free to reach out!",
     "email": "Email",
     "location": "Location",
     "formTitle": "Send a Message",

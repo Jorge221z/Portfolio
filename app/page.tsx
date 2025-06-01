@@ -360,7 +360,7 @@ export default function Portfolio() {
                       </div>
                       <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
                         <Smartphone className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">Mobile First</span>
+                        <span className="text-sm text-zinc-300">Responsive design</span>
                       </div>
                       <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
                         <Server className="h-8 w-8 text-emerald-400 mb-2" />

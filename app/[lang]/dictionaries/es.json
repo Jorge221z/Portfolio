@@ -82,11 +82,11 @@
     "description1": "Soy un desarrollador full stack con más de 5 años de experiencia creando aplicaciones web y móviles innovadoras. Me encanta convertir problemas complejos en soluciones simples y hermosas que los usuarios aman.",
     "description2": "Mi experiencia abarca frameworks frontend modernos, sistemas backend robustos y desarrollo móvil multiplataforma. Siempre estoy ansioso por aprender nuevas tecnologías y abordar proyectos desafiantes.",
     "location": "Yecla, Murcia, España",
-    "availability": "Disponible para freelance",
-    "cleanCode": "Código Limpio",
-    "mobileFirst": "Mobile First",
-    "scalable": "Escalable",
-    "optimized": "Optimizado"
+    "availability": "Disponible para relocalización",
+    "dockerization": "Dockerización",
+    "restApiDevelopment": "Desarrollo de APIs REST",
+    "deploymentScripting": "Despliegue en VPS & Bash Scripting",
+    "aiImplementation": "Implementación con IA"
   },
   "skills": {
     "badge": "Stack Tecnológico",
@@ -100,28 +100,16 @@
     "badge": "Historial Laboral",
     "title": "Experiencia Profesional",
     "exp1": {
-      "title": "Desarrollador Full Stack Senior",
-      "company": "Tech Solutions Inc.",
-      "period": "2022 - Presente",
-      "description": "Lidero el desarrollo de aplicaciones web escalables y soluciones móviles para clientes empresariales."
-    },
-    "exp2": {
-      "title": "Desarrollador Móvil",
-      "company": "StartupXYZ",
-      "period": "2020 - 2022",
-      "description": "Desarrollé aplicaciones móviles multiplataforma usando React Native y Flutter."
-    },
-    "exp3": {
-      "title": "Desarrollador Frontend",
-      "company": "Agencia Digital",
-      "period": "2018 - 2020",
-      "description": "Creé interfaces web responsivas y mejoré la experiencia de usuario para varios clientes."
+      "title": "Desarrollador de Plugins & Soluciones Web",
+      "company": "Skills Divers",
+      "period": "Febrero 2025 - Presente",
+      "description": "Desarrollo de plugins nativos especializados para Moodle y WordPress, así como aplicaciones web robustas con Laravel para proyectos europeos. Colaboración en equipos internacionales utilizando inglés como idioma de trabajo, enfocado en crear soluciones educativas innovadoras y plataformas de gestión de contenido personalizadas."
     }
   },
   "contact": {
     "badge": "Contacto",
     "title": "Ponte en Contacto",
-    "description": "Siempre estoy interesado en escuchar sobre nuevas oportunidades y proyectos emocionantes. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
+    "description": "Siempre estoy interesado en escuchar sobre nuevas oportunidades y proyectos emocionantes. Tengo total disponibilidad para mudarme a cualquier ciudad. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
     "email": "Email",
     "location": "Ubicación",
     "formTitle": "Enviar un Mensaje",

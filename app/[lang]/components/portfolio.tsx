@@ -66,10 +66,10 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
   }
 
   const skills = {
-    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
-    backend: ["Node.js", "Python", "Express", "FastAPI", "PostgreSQL"],
-    mobile: ["React Native", "Flutter", "Swift", "Kotlin"],
-    tools: ["Docker", "AWS", "Git", "Figma", "MongoDB"],
+    frontend: ["React", "TypeScript", "Tailwind CSS", "Vue.js", "Next.js"],
+    backend: ["Laravel", "Node.js", "Express", "PHP", "FastAPI", "WordPress", "Moodle"],
+    mobile: ["React Native", "Expo", "CI/CD con EAS", "Firebase"],
+    tools: ["Docker", "Google Cloud", "Git", "Figma", "MongoDB", 'SQL'],
   }
 
   const projects = [
@@ -106,18 +106,6 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       period: dict.experience.exp1.period,
       description: dict.experience.exp1.description,
     },
-    {
-      title: dict.experience.exp2.title,
-      company: dict.experience.exp2.company,
-      period: dict.experience.exp2.period,
-      description: dict.experience.exp2.description,
-    },
-    {
-      title: dict.experience.exp3.title,
-      company: dict.experience.exp3.company,
-      period: dict.experience.exp3.period,
-      description: dict.experience.exp3.description,
-    },
   ]
 
   return (
@@ -134,7 +122,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              {["home", "projects", "about", "skills", "experience", "contact"].map((section) => (
+              {["home", "projects", "experience", "about", "skills", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -173,7 +161,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
         {menuOpen && (
           <div className="md:hidden bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["home", "projects", "about", "skills", "experience", "contact"].map((section) => (
+              {["home", "projects", "experience", "about", "skills", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -339,7 +327,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
                   <div className="absolute top-16 right-2 z-10 animate-float" style={{ animationDelay: "0.5s" }}>
                     <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
-                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">4+</div>
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">6+</div>
                       <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.projects}</div>
                     </div>
                   </div>
@@ -483,10 +471,50 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section
+        id="experience"
+        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
+        ref={(el) => (sectionsRef.current.experience = el)}
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              {dict.experience.badge}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">
+              {dict.experience.title}
+            </h2>
+          </div>
+
+          <div className="space-y-8">
+            {experience.map((exp, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h3>
+                    <p className="text-emerald-600 dark:text-emerald-400">{exp.company}</p>
+                  </div>
+                  <div className="mt-2 md:mt-0">
+                    <span className="inline-block bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm px-3 py-1 rounded-full">
+                      {exp.period}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-slate-600 dark:text-zinc-400">{exp.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section
         id="about"
-        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
+        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
         ref={(el) => (sectionsRef.current.about = el)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -498,20 +526,44 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   <div className="h-full w-full p-8 flex items-center justify-center">
                     <div className="grid grid-cols-2 gap-4 w-full">
                       <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Code className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
-                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.cleanCode}</span>
+                        <Image
+                          src="/docker-logo.svg"
+                          alt="Docker"
+                          width={48}
+                          height={48}
+                          className="mb-2"
+                        />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.dockerization}</span>
                       </div>
                       <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Smartphone className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
-                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.mobileFirst}</span>
+                        <Image
+                          src="/rest-api-icon.svg"
+                          alt="REST API"
+                          width={48}
+                          height={48}
+                          className="mb-2"
+                        />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.restApiDevelopment}</span>
                       </div>
                       <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Server className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
-                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.scalable}</span>
+                        <Image
+                          src="/shell.svg"
+                          alt="Shell Scripting"
+                          width={48}
+                          height={48}
+                          className="mb-2"
+                        />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300 text-center">{dict.about.deploymentScripting}</span>
                       </div>
                       <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Database className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
-                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.optimized}</span>
+                        <Image
+                          src="/gemini-logo.svg"
+                          alt="Gemini AI"
+                          width={48}
+                          height={48}
+                          className="mb-2"
+                        />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.aiImplementation}</span>
                       </div>
                     </div>
                   </div>
@@ -554,7 +606,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       {/* Skills Section */}
       <section
         id="skills"
-        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
         ref={(el) => (sectionsRef.current.skills = el)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -649,150 +701,72 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section
-        id="experience"
-        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
-        ref={(el) => (sectionsRef.current.experience = el)}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
-              {dict.experience.badge}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">
-              {dict.experience.title}
-            </h2>
-          </div>
-
-          <div className="space-y-8">
-            {experience.map((exp, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h3>
-                    <p className="text-emerald-600 dark:text-emerald-400">{exp.company}</p>
-                  </div>
-                  <div className="mt-2 md:mt-0">
-                    <span className="inline-block bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm px-3 py-1 rounded-full">
-                      {exp.period}
-                    </span>
-                  </div>
-                </div>
-                <p className="text-slate-600 dark:text-zinc-400">{exp.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section
         id="contact"
         className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
         ref={(el) => (sectionsRef.current.contact = el)}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
-                {dict.contact.badge}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-slate-900 dark:text-white">
-                {dict.contact.title}
-              </h2>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              {dict.contact.badge}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-slate-900 dark:text-white">
+              {dict.contact.title}
+            </h2>
 
-              <p className="text-slate-600 dark:text-zinc-400 mb-8">{dict.contact.description}</p>
+            <p className="text-slate-600 dark:text-zinc-400 mb-12 max-w-2xl mx-auto">{dict.contact.description}</p>
+          </div>
 
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.email}</p>
-                    <p className="text-slate-900 dark:text-zinc-200">jorgemunozcast12@gmail.com</p>
-                  </div>
+          <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-8 shadow-sm">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-lg flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.location}</p>
-                    <p className="text-slate-900 dark:text-zinc-200">{dict.about.location}</p>
-                  </div>
+                <div>
+                  <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.email}</p>
+                  <p className="text-slate-900 dark:text-zinc-200 font-medium">jorgemunozcast12@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex gap-4 mt-8">
-                <Link
-                  href="https://github.com/Jorge221z"
-                  target="_blank"
-                  className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
-                >
-                  <Github className="w-5 h-5" />
-                  <span className="sr-only">GitHub</span>
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/jorge-muñoz-castillo"
-                  className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-                <Link
-                  href="mailto:jorgemunozcast12@gmail.com"
-                  target="_blank"
-                  className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
-                >
-                  <Mail className="w-5 h-5" />
-                  <span className="sr-only">Email</span>
-                </Link>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-lg flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div>
+                  <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.location}</p>
+                  <p className="text-slate-900 dark:text-zinc-200 font-medium">{dict.about.location}</p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 shadow-sm">
-              <h3 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">{dict.contact.formTitle}</h3>
-
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Input
-                      placeholder={dict.contact.nameField}
-                      className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder={dict.contact.emailField}
-                      className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <Input
-                    placeholder={dict.contact.subjectField}
-                    className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder={dict.contact.messageField}
-                    rows={5}
-                    className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
-                  />
-                </div>
-                <Button className="w-full bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white">
-                  <Send className="w-4 h-4 mr-2" />
-                  {dict.contact.sendButton}
-                </Button>
-              </form>
+            <div className="flex justify-center gap-4 mt-8 pt-8 border-t border-slate-200 dark:border-zinc-700">
+              <Link
+                href="https://github.com/Jorge221z"
+                target="_blank"
+                className="w-12 h-12 bg-white dark:bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors border border-zinc-200 dark:border-zinc-600 hover:border-emerald-500/50"
+              >
+                <Github className="w-6 h-6" />
+                <span className="sr-only">GitHub</span>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/jorge-muñoz-castillo"
+                target="_blank"
+                className="w-12 h-12 bg-white dark:bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors border border-zinc-200 dark:border-zinc-600 hover:border-emerald-500/50"
+              >
+                <Linkedin className="w-6 h-6" />
+                <span className="sr-only">LinkedIn</span>
+              </Link>
+              <Link
+                href="mailto:jorgemunozcast12@gmail.com"
+                target="_blank"
+                className="w-12 h-12 bg-white dark:bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors border border-zinc-200 dark:border-zinc-600 hover:border-emerald-500/50"
+              >
+                <Mail className="w-6 h-6" />
+                <span className="sr-only">Email</span>
+              </Link>
             </div>
           </div>
         </div>
