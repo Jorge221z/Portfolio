@@ -128,7 +128,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <span className="text-xl font-medium text-slate-900 dark:text-white">
-                JM<span className="text-emerald-600 dark:text-emerald-400">.</span>
+                JMC<span className="text-emerald-600 dark:text-emerald-400">.</span>
               </span>
             </div>
 
@@ -201,7 +201,19 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               }`}
             >
               <div className="inline-block mb-4">
-                <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase border border-emerald-600/30 dark:border-emerald-400/30 rounded-full px-3 py-1">
+                <span className="relative text-emerald-700 dark:text-emerald-300 text-sm font-semibold tracking-wider uppercase 
+                                bg-gradient-to-r from-emerald-50 via-emerald-100 to-emerald-50 
+                                dark:bg-gradient-to-r dark:from-emerald-950/80 dark:via-emerald-900/60 dark:to-emerald-950/80
+                                border border-emerald-200/60 dark:border-emerald-400/30 
+                                shadow-lg shadow-emerald-100/50 dark:shadow-emerald-900/30
+                                backdrop-blur-sm rounded-full px-4 py-2 
+                                transition-all duration-300 ease-in-out 
+                                hover:shadow-xl hover:shadow-emerald-200/60 dark:hover:shadow-emerald-800/40
+                                hover:scale-105 hover:border-emerald-300/80 dark:hover:border-emerald-400/50
+                                before:absolute before:inset-0 before:rounded-full 
+                                before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
+                                dark:before:via-white/10 before:opacity-0 hover:before:opacity-100 
+                                before:transition-opacity before:duration-300">
                   {dict.hero.badge}
                 </span>
               </div>
@@ -215,38 +227,78 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <div className="flex flex-wrap gap-4 mb-12">
                 <Button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white rounded-md px-6 py-2.5"
+                  className="group relative bg-gradient-to-r from-emerald-600 via-emerald-600 to-emerald-700 
+                           hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-800
+                           dark:from-emerald-500 dark:via-emerald-500 dark:to-emerald-600 
+                           dark:hover:from-emerald-600 dark:hover:via-emerald-500 dark:hover:to-emerald-700
+                           text-white font-semibold rounded-xl px-8 py-3 
+                           shadow-lg shadow-emerald-500/25 dark:shadow-emerald-400/20
+                           hover:shadow-xl hover:shadow-emerald-500/40 dark:hover:shadow-emerald-400/30
+                           transform transition-all duration-300 ease-in-out 
+                           hover:scale-105 hover:-translate-y-0.5
+                           border border-emerald-500/20 dark:border-emerald-400/20
+                           overflow-hidden
+                           before:absolute before:inset-0 before:bg-gradient-to-r 
+                           before:from-transparent before:via-white/20 before:to-transparent 
+                           before:translate-x-[-100%] hover:before:translate-x-[100%] 
+                           before:transition-transform before:duration-700 before:ease-in-out"
                 >
-                  {dict.hero.getInTouch}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <span className="relative z-10 flex items-center">
+                    {dict.hero.getInTouch}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
                 </Button>
 
                 <Button
                   onClick={() => scrollToSection("projects")}
                   variant="outline"
-                  className="border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white rounded-md px-6 py-2.5"
+                  className="group relative bg-gradient-to-r from-white via-zinc-50 to-white 
+                           dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900
+                           hover:from-zinc-50 hover:via-white hover:to-zinc-50
+                           dark:hover:from-zinc-800 dark:hover:via-zinc-700 dark:hover:to-zinc-800
+                           border-2 border-slate-300/60 dark:border-zinc-600/60 
+                           hover:border-slate-400/80 dark:hover:border-zinc-500/80
+                           text-slate-700 dark:text-zinc-300 
+                           hover:text-zinc-900 dark:hover:text-white 
+                           font-semibold rounded-xl px-8 py-3
+                           shadow-lg shadow-slate-200/50 dark:shadow-zinc-900/30
+                           hover:shadow-xl hover:shadow-slate-300/60 dark:hover:shadow-zinc-800/40
+                           transform transition-all duration-300 ease-in-out 
+                           hover:scale-105 hover:-translate-y-0.5
+                           backdrop-blur-sm
+                           overflow-hidden
+                           before:absolute before:inset-0 before:bg-gradient-to-r 
+                           before:from-transparent before:via-slate-100/50 before:to-transparent 
+                           dark:before:via-zinc-700/30
+                           before:translate-x-[-100%] hover:before:translate-x-[100%] 
+                           before:transition-transform before:duration-700 before:ease-in-out"
                 >
-                  {dict.hero.viewProjects}
+                  <span className="relative z-10">
+                    {dict.hero.viewProjects}
+                  </span>
                 </Button>
               </div>
 
               <div className="flex gap-4">
                 <Link
-                  href="#"
+                  href="https://github.com/Jorge221z"
+                  target="_blank"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/jorge-muñoz-castillo"
+                  target="_blank"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="mailto:jorgemunozcast12@gmail.com"
+                  target="_blank"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <Mail className="h-5 w-5" />
