@@ -312,38 +312,75 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <div className="relative z-10 aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-2xl transform rotate-6"></div>
-                <div className="absolute inset-0 bg-zinc-100/50 dark:bg-zinc-800/50 backdrop-blur-sm rounded-2xl border border-zinc-300 dark:border-zinc-700 transform -rotate-2"></div>
-                <div className="absolute inset-0 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(5,150,105,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.2),transparent_70%)]"></div>
-                  <div className="h-full w-full flex items-center justify-center p-8">
-                    <div className="text-center">
-                      <Code className="h-16 w-16 text-emerald-600 dark:text-emerald-400 mx-auto mb-6" />
-                      <h3 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">Jorge Muñoz</h3>
-                      <p className="text-slate-600 dark:text-zinc-400 mb-6">{dict.hero.badge}</p>
-                      <div className="flex justify-center gap-4">
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-slate-900 dark:text-white">5+</div>
-                          <div className="text-xs text-slate-500 dark:text-zinc-500">{dict.hero.years}</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-slate-900 dark:text-white">50+</div>
-                          <div className="text-xs text-slate-500 dark:text-zinc-500">{dict.hero.projects}</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-slate-900 dark:text-white">20+</div>
-                          <div className="text-xs text-slate-500 dark:text-zinc-500">{dict.hero.technologies}</div>
-                        </div>
+              <div className="relative max-w-lg mx-auto">
+                {/* Main container with floating cards */}
+                <div className="relative h-96 w-full">
+                  
+                  {/* Central profile card */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                    <div className="bg-white dark:bg-zinc-800 rounded-2xl p-6 shadow-2xl shadow-emerald-500/10 dark:shadow-emerald-400/10 border border-zinc-200/60 dark:border-zinc-700/60 backdrop-blur-sm w-48 h-48 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-400/20">
+                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-400 dark:to-emerald-500 rounded-full flex items-center justify-center mb-3 shadow-lg">
+                        <Code className="h-8 w-8 text-white" />
                       </div>
+                      <h3 className="font-bold text-slate-900 dark:text-white text-sm">Jorge Muñoz</h3>
+                      <p className="text-xs text-slate-600 dark:text-zinc-400 text-center mt-1">{dict.hero.badge}</p>
                     </div>
+                  </div>
+
+                  {/* Floating stat cards */}
+                  <div className="absolute top-8 left-4 z-10 animate-float">
+                    <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">5+</div>
+                      <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.years}</div>
+                    </div>
+                  </div>
+
+                  <div className="absolute top-16 right-2 z-10 animate-float" style={{ animationDelay: "0.5s" }}>
+                    <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">50+</div>
+                      <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.projects}</div>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-12 left-8 z-10 animate-float" style={{ animationDelay: "1s" }}>
+                    <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">20+</div>
+                      <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.technologies}</div>
+                    </div>
+                  </div>
+
+                  {/* Tech stack icons floating */}
+                  <div className="absolute top-20 right-16 z-5 animate-float" style={{ animationDelay: "1.5s" }}>
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-blue-600/20 dark:from-blue-400/20 dark:to-blue-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-blue-200/30 dark:border-blue-400/30">
+                      <Smartphone className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-20 right-4 z-5 animate-float" style={{ animationDelay: "2s" }}>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-600/20 dark:from-purple-400/20 dark:to-purple-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-purple-200/30 dark:border-purple-400/30">
+                      <Server className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                    </div>
+                  </div>
+
+                  <div className="absolute top-32 left-0 z-5 animate-float" style={{ animationDelay: "2.5s" }}>
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/20 dark:from-orange-400/20 dark:to-orange-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-orange-200/30 dark:border-orange-400/30">
+                      <Database className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                    </div>
+                  </div>
+
+                  {/* Animated background elements */}
+                  <div className="absolute inset-0 -z-10">
+                    <div className="absolute top-16 left-12 w-32 h-32 bg-emerald-500/5 dark:bg-emerald-400/5 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-16 right-8 w-24 h-24 bg-emerald-500/10 dark:bg-emerald-400/10 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+                    <div className="absolute top-32 right-20 w-16 h-16 bg-emerald-500/5 dark:bg-emerald-400/5 rounded-full animate-pulse" style={{ animationDelay: "2s" }}></div>
+                  </div>
+
+                  {/* Decorative grid pattern */}
+                  <div className="absolute inset-0 -z-20 opacity-30">
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,150,105,0.03)_1px,transparent_1px),linear-gradient(rgba(5,150,105,0.03)_1px,transparent_1px)] bg-[size:20px_20px] dark:bg-[linear-gradient(90deg,rgba(16,185,129,0.05)_1px,transparent_1px),linear-gradient(rgba(16,185,129,0.05)_1px,transparent_1px)]"></div>
                   </div>
                 </div>
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute top-1/2 -right-12 h-24 w-24 border border-emerald-500/20 rounded-full"></div>
-              <div className="absolute -bottom-8 left-1/3 h-16 w-16 border border-emerald-500/20 rounded-full"></div>
             </div>
           </div>
         </div>
