@@ -322,29 +322,31 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                       <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-400 dark:to-emerald-500 rounded-full flex items-center justify-center mb-3 shadow-lg">
                         <Code className="h-8 w-8 text-white" />
                       </div>
-                      <h3 className="font-bold text-slate-900 dark:text-white text-sm">Jorge Muñoz</h3>
-                      <p className="text-xs text-slate-600 dark:text-zinc-400 text-center mt-1">{dict.hero.badge}</p>
+                      <h3 className="font-bold text-slate-900 dark:text-white text-sm mb-2">Jorge Muñoz</h3>
+                      <div className="text-center">
+                        <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium mb-1">Junior Developer</p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Floating stat cards */}
                   <div className="absolute top-8 left-4 z-10 animate-float">
                     <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
-                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">5+</div>
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">1+</div>
                       <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.years}</div>
                     </div>
                   </div>
 
                   <div className="absolute top-16 right-2 z-10 animate-float" style={{ animationDelay: "0.5s" }}>
                     <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
-                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">50+</div>
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">4+</div>
                       <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.projects}</div>
                     </div>
                   </div>
 
                   <div className="absolute bottom-12 left-8 z-10 animate-float" style={{ animationDelay: "1s" }}>
                     <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
-                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">20+</div>
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">10+</div>
                       <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.technologies}</div>
                     </div>
                   </div>
