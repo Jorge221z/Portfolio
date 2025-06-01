@@ -7,9 +7,12 @@
     "experience": "Experience",
     "contact": "Contact"
   },
+  "language": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
   "hero": {
     "badge": "Full Stack Developer",
-    "name": "Jorge Muñoz Castillo",
     "description": "Crafting exceptional digital experiences with modern technologies and innovative solutions.",
     "getInTouch": "Get in touch",
     "viewProjects": "View projects",
@@ -33,6 +36,44 @@
     "project3": {
       "title": "Task Management Dashboard",
       "description": "Modern dashboard for project management with team collaboration features"
+    }
+  },
+  "projectsPage": {
+    "title": "All Projects",
+    "subtitle": "Explore my complete portfolio of projects, from web applications to mobile apps and innovative solutions.",
+    "backToHome": "Back to Home",
+    "searchPlaceholder": "Search projects...",
+    "categories": {
+      "all": "All Projects",
+      "fullstack": "Full Stack",
+      "mobile": "Mobile",
+      "web": "Web",
+      "ai": "AI/ML",
+      "blockchain": "Blockchain",
+      "iot": "IoT"
+    },
+    "showingResults": "Showing",
+    "of": "of",
+    "projects": "projects",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "keyFeatures": "Key Features",
+    "moreFeatures": "more features",
+    "viewDetails": "View Details",
+    "noResults": "No projects found",
+    "noResultsDescription": "Try adjusting your search or filter criteria",
+    "clearFilters": "Clear Filters",
+    "ctaTitle": "Interested in working together?",
+    "ctaDescription": "Let's discuss your next project and bring your ideas to life.",
+    "getInTouch": "Get In Touch",
+    "project1": {
+      "longDescription": "This comprehensive e-commerce platform was built from the ground up using modern web technologies. It features a complete shopping cart system, secure payment processing through Stripe, user authentication, order management, and an admin dashboard for inventory control. The platform is fully responsive and optimized for performance."
+    },
+    "project2": {
+      "longDescription": "A cross-platform mobile application designed for fitness enthusiasts. The app tracks workouts, monitors progress, and provides personalized training plans. It features real-time data synchronization across devices, social features for sharing achievements, and integration with wearable devices."
+    },
+    "project3": {
+      "longDescription": "A modern project management dashboard built with Next.js and TypeScript. Features include task management, team collaboration tools, real-time updates, file sharing, and comprehensive reporting. The application uses Prisma for database management and includes role-based access control."
     }
   },
   "about": {
@@ -92,10 +133,5 @@
   },
   "footer": {
     "rights": "All rights reserved."
-  },
-  "language": {
-    "selector": "Language",
-    "english": "English",
-    "spanish": "Spanish"
   }
 }

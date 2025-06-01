@@ -24,6 +24,7 @@ import {
   X,
 } from "lucide-react"
 import { LanguageSelector } from "./language-selector"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface PortfolioProps {
   dict: any
@@ -120,14 +121,14 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
   ]
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+    <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300">
       {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-50/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <span className="text-xl font-medium text-white">
-                JM<span className="text-emerald-400">.</span>
+              <span className="text-xl font-medium text-slate-900 dark:text-white">
+                JM<span className="text-emerald-600 dark:text-emerald-400">.</span>
               </span>
             </div>
 
@@ -138,7 +139,9 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   key={section}
                   onClick={() => scrollToSection(section)}
                   className={`text-sm font-medium transition-colors ${
-                    activeSection === section ? "text-emerald-400" : "text-zinc-400 hover:text-white"
+                    activeSection === section
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : "text-slate-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                   }`}
                 >
                   {dict.nav[section]}
@@ -149,14 +152,16 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             {/* Desktop Controls */}
             <div className="hidden md:flex items-center space-x-4">
               <LanguageSelector currentLang={lang} dict={dict} />
+              <ThemeToggle />
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
               <LanguageSelector currentLang={lang} dict={dict} />
+              <ThemeToggle />
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="text-zinc-400 hover:text-white focus:outline-none"
+                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white focus:outline-none"
               >
                 {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -166,7 +171,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
         {/* Mobile Navigation */}
         {menuOpen && (
-          <div className="md:hidden bg-zinc-900 border-b border-zinc-800">
+          <div className="md:hidden bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {["home", "projects", "about", "skills", "experience", "contact"].map((section) => (
                 <button
@@ -174,8 +179,8 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   onClick={() => scrollToSection(section)}
                   className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
                     activeSection === section
-                      ? "bg-zinc-800 text-emerald-400"
-                      : "text-zinc-400 hover:bg-zinc-800 hover:text-white"
+                      ? "bg-emerald-100 dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white"
                   }`}
                 >
                   {dict.nav[section]}
@@ -196,21 +201,21 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               }`}
             >
               <div className="inline-block mb-4">
-                <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase border border-emerald-400/30 rounded-full px-3 py-1">
+                <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase border border-emerald-600/30 dark:border-emerald-400/30 rounded-full px-3 py-1">
                   {dict.hero.badge}
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Jorge <span className="text-emerald-400">Muñoz</span> Castillo
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-slate-900 dark:text-white">
+                Jorge <span className="text-emerald-600 dark:text-emerald-400">Muñoz</span> Castillo
               </h1>
 
-              <p className="text-xl text-zinc-400 mb-8 max-w-lg">{dict.hero.description}</p>
+              <p className="text-xl text-slate-600 dark:text-zinc-400 mb-8 max-w-lg">{dict.hero.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-12">
                 <Button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-md px-6 py-2.5"
+                  className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white rounded-md px-6 py-2.5"
                 >
                   {dict.hero.getInTouch}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -219,22 +224,31 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 <Button
                   onClick={() => scrollToSection("projects")}
                   variant="outline"
-                  className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md px-6 py-2.5"
+                  className="border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white rounded-md px-6 py-2.5"
                 >
                   {dict.hero.viewProjects}
                 </Button>
               </div>
 
               <div className="flex gap-4">
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link
+                  href="#"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link
+                  href="#"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link
+                  href="#"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                >
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
                 </Link>
@@ -247,27 +261,27 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               }`}
             >
               <div className="relative z-10 aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl transform rotate-6"></div>
-                <div className="absolute inset-0 bg-zinc-800/50 backdrop-blur-sm rounded-2xl border border-zinc-700 transform -rotate-2"></div>
-                <div className="absolute inset-0 bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.2),transparent_70%)]"></div>
+                <div className="absolute inset-0 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-2xl transform rotate-6"></div>
+                <div className="absolute inset-0 bg-zinc-100/50 dark:bg-zinc-800/50 backdrop-blur-sm rounded-2xl border border-zinc-300 dark:border-zinc-700 transform -rotate-2"></div>
+                <div className="absolute inset-0 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(5,150,105,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.2),transparent_70%)]"></div>
                   <div className="h-full w-full flex items-center justify-center p-8">
                     <div className="text-center">
-                      <Code className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
-                      <h3 className="text-2xl font-bold mb-2">Jorge Muñoz</h3>
-                      <p className="text-zinc-400 mb-6">{dict.hero.badge}</p>
+                      <Code className="h-16 w-16 text-emerald-600 dark:text-emerald-400 mx-auto mb-6" />
+                      <h3 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">Jorge Muñoz</h3>
+                      <p className="text-slate-600 dark:text-zinc-400 mb-6">{dict.hero.badge}</p>
                       <div className="flex justify-center gap-4">
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-white">5+</div>
-                          <div className="text-xs text-zinc-500">{dict.hero.years}</div>
+                          <div className="text-2xl font-bold text-slate-900 dark:text-white">5+</div>
+                          <div className="text-xs text-slate-500 dark:text-zinc-500">{dict.hero.years}</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-white">50+</div>
-                          <div className="text-xs text-zinc-500">{dict.hero.projects}</div>
+                          <div className="text-2xl font-bold text-slate-900 dark:text-white">50+</div>
+                          <div className="text-xs text-slate-500 dark:text-zinc-500">{dict.hero.projects}</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-white">20+</div>
-                          <div className="text-xs text-zinc-500">{dict.hero.technologies}</div>
+                          <div className="text-2xl font-bold text-slate-900 dark:text-white">20+</div>
+                          <div className="text-xs text-slate-500 dark:text-zinc-500">{dict.hero.technologies}</div>
                         </div>
                       </div>
                     </div>
@@ -284,23 +298,29 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-zinc-900" ref={(el) => (sectionsRef.current.projects = el)}>
+      <section
+        id="projects"
+        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        ref={(el) => (sectionsRef.current.projects = el)}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
             <div>
-              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
                 {dict.projects.badge}
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2">{dict.projects.title}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">
+                {dict.projects.title}
+              </h2>
             </div>
-            <p className="text-zinc-400 mt-4 md:mt-0 max-w-md">{dict.projects.description}</p>
+            <p className="text-slate-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md">{dict.projects.description}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-zinc-800 rounded-xl overflow-hidden border border-zinc-700 hover:border-emerald-500/50 transition-all duration-300"
+                className="group bg-white dark:bg-zinc-800 rounded-xl overflow-hidden border border-slate-200 dark:border-zinc-700 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -314,25 +334,34 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
+                  <p className="text-slate-600 dark:text-zinc-400 text-sm mb-4">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => (
-                      <Badge key={tech} className="bg-zinc-700 text-zinc-300 hover:bg-zinc-600">
+                      <Badge
+                        key={tech}
+                        className="bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                      >
                         {tech}
                       </Badge>
                     ))}
                   </div>
 
                   <div className="flex gap-4">
-                    <Link href={project.github} className="text-zinc-400 hover:text-white transition-colors">
+                    <Link
+                      href={project.github}
+                      className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    >
                       <Github className="h-5 w-5" />
                       <span className="sr-only">GitHub</span>
                     </Link>
-                    <Link href={project.live} className="text-zinc-400 hover:text-white transition-colors">
+                    <Link
+                      href={project.live}
+                      className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    >
                       <ExternalLink className="h-5 w-5" />
                       <span className="sr-only">Live Demo</span>
                     </Link>
@@ -344,41 +373,54 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
           <div className="mt-12 text-center">
             <Button
+              asChild
               variant="outline"
-              className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md px-6 py-2.5"
+              className="border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white rounded-md px-6 py-2.5"
             >
-              {dict.projects.viewAll}
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <Link
+                href={`/${lang}/projects`}
+                onClick={() => {
+                  // Smooth scroll to top before navigation
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }}
+              >
+                {dict.projects.viewAll}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24" ref={(el) => (sectionsRef.current.about = el)}>
+      <section
+        id="about"
+        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
+        ref={(el) => (sectionsRef.current.about = el)}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="aspect-square max-w-md mx-auto relative">
-                <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl transform rotate-3"></div>
-                <div className="absolute inset-0 bg-zinc-800 rounded-2xl border border-zinc-700 overflow-hidden">
+                <div className="absolute inset-0 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-2xl transform rotate-3"></div>
+                <div className="absolute inset-0 bg-white dark:bg-zinc-800 rounded-2xl border border-slate-200 dark:border-zinc-700 overflow-hidden shadow-lg">
                   <div className="h-full w-full p-8 flex items-center justify-center">
                     <div className="grid grid-cols-2 gap-4 w-full">
-                      <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Code className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">{dict.about.cleanCode}</span>
+                      <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
+                        <Code className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.cleanCode}</span>
                       </div>
-                      <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Smartphone className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">{dict.about.mobileFirst}</span>
+                      <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
+                        <Smartphone className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.mobileFirst}</span>
                       </div>
-                      <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Server className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">{dict.about.scalable}</span>
+                      <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
+                        <Server className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.scalable}</span>
                       </div>
-                      <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
-                        <Database className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">{dict.about.optimized}</span>
+                      <div className="aspect-square bg-zinc-100/50 dark:bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
+                        <Database className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
+                        <span className="text-sm text-slate-700 dark:text-zinc-300">{dict.about.optimized}</span>
                       </div>
                     </div>
                   </div>
@@ -391,22 +433,26 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             </div>
 
             <div>
-              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">{dict.about.badge}</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">{dict.about.title}</h2>
+              <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
+                {dict.about.badge}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-slate-900 dark:text-white">
+                {dict.about.title}
+              </h2>
 
-              <div className="space-y-6 text-zinc-300">
+              <div className="space-y-6 text-slate-700 dark:text-zinc-300">
                 <p>{dict.about.description1}</p>
                 <p>{dict.about.description2}</p>
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3 bg-zinc-800/50 rounded-lg px-4 py-3 border border-zinc-700">
-                  <MapPin className="w-5 h-5 text-emerald-400" />
-                  <span className="text-zinc-300">{dict.about.location}</span>
+                <div className="flex items-center gap-3 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-lg px-4 py-3 border border-zinc-200 dark:border-zinc-700">
+                  <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <span className="text-slate-700 dark:text-zinc-300">{dict.about.location}</span>
                 </div>
-                <div className="flex items-center gap-3 bg-zinc-800/50 rounded-lg px-4 py-3 border border-zinc-700">
-                  <Calendar className="w-5 h-5 text-emerald-400" />
-                  <span className="text-zinc-300">{dict.about.availability}</span>
+                <div className="flex items-center gap-3 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-lg px-4 py-3 border border-zinc-200 dark:border-zinc-700">
+                  <Calendar className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <span className="text-slate-700 dark:text-zinc-300">{dict.about.availability}</span>
                 </div>
               </div>
             </div>
@@ -415,76 +461,94 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 bg-zinc-900" ref={(el) => (sectionsRef.current.skills = el)}>
+      <section
+        id="skills"
+        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        ref={(el) => (sectionsRef.current.skills = el)}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">{dict.skills.badge}</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">{dict.skills.title}</h2>
+            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              {dict.skills.badge}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">{dict.skills.title}</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-zinc-800 rounded-xl border border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300">
+            <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-emerald-400/10">
-                  <Code className="w-5 h-5 text-emerald-400" />
+                <div className="p-2 rounded-lg bg-emerald-600/10 dark:bg-emerald-400/10">
+                  <Code className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">{dict.skills.frontend}</h3>
+                <h3 className="text-xl font-medium text-slate-900 dark:text-white">{dict.skills.frontend}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {skills.frontend.map((skill) => (
-                  <Badge key={skill} className="bg-zinc-700 text-zinc-300 hover:bg-zinc-600">
+                  <Badge
+                    key={skill}
+                    className="bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                  >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            <div className="bg-zinc-800 rounded-xl border border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300">
+            <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-emerald-400/10">
-                  <Server className="w-5 h-5 text-emerald-400" />
+                <div className="p-2 rounded-lg bg-emerald-600/10 dark:bg-emerald-400/10">
+                  <Server className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">{dict.skills.backend}</h3>
+                <h3 className="text-xl font-medium text-slate-900 dark:text-white">{dict.skills.backend}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {skills.backend.map((skill) => (
-                  <Badge key={skill} className="bg-zinc-700 text-zinc-300 hover:bg-zinc-600">
+                  <Badge
+                    key={skill}
+                    className="bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                  >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            <div className="bg-zinc-800 rounded-xl border border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300">
+            <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-emerald-400/10">
-                  <Smartphone className="w-5 h-5 text-emerald-400" />
+                <div className="p-2 rounded-lg bg-emerald-600/10 dark:bg-emerald-400/10">
+                  <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">{dict.skills.mobile}</h3>
+                <h3 className="text-xl font-medium text-slate-900 dark:text-white">{dict.skills.mobile}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {skills.mobile.map((skill) => (
-                  <Badge key={skill} className="bg-zinc-700 text-zinc-300 hover:bg-zinc-600">
+                  <Badge
+                    key={skill}
+                    className="bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                  >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            <div className="bg-zinc-800 rounded-xl border border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300">
+            <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-emerald-400/10">
-                  <Database className="w-5 h-5 text-emerald-400" />
+                <div className="p-2 rounded-lg bg-emerald-600/10 dark:bg-emerald-400/10">
+                  <Database className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">{dict.skills.tools}</h3>
+                <h3 className="text-xl font-medium text-slate-900 dark:text-white">{dict.skills.tools}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {skills.tools.map((skill) => (
-                  <Badge key={skill} className="bg-zinc-700 text-zinc-300 hover:bg-zinc-600">
+                  <Badge
+                    key={skill}
+                    className="bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                  >
                     {skill}
                   </Badge>
                 ))}
@@ -495,33 +559,39 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24" ref={(el) => (sectionsRef.current.experience = el)}>
+      <section
+        id="experience"
+        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
+        ref={(el) => (sectionsRef.current.experience = el)}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">
+            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
               {dict.experience.badge}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">{dict.experience.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">
+              {dict.experience.title}
+            </h2>
           </div>
 
           <div className="space-y-8">
             {experience.map((exp, index) => (
               <div
                 key={index}
-                className="bg-zinc-800 rounded-xl border border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300"
+                className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold">{exp.title}</h3>
-                    <p className="text-emerald-400">{exp.company}</p>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h3>
+                    <p className="text-emerald-600 dark:text-emerald-400">{exp.company}</p>
                   </div>
                   <div className="mt-2 md:mt-0">
-                    <span className="inline-block bg-zinc-700 text-zinc-300 text-sm px-3 py-1 rounded-full">
+                    <span className="inline-block bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm px-3 py-1 rounded-full">
                       {exp.period}
                     </span>
                   </div>
                 </div>
-                <p className="text-zinc-400">{exp.description}</p>
+                <p className="text-slate-600 dark:text-zinc-400">{exp.description}</p>
               </div>
             ))}
           </div>
@@ -529,35 +599,41 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-zinc-900" ref={(el) => (sectionsRef.current.contact = el)}>
+      <section
+        id="contact"
+        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        ref={(el) => (sectionsRef.current.contact = el)}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
                 {dict.contact.badge}
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">{dict.contact.title}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-slate-900 dark:text-white">
+                {dict.contact.title}
+              </h2>
 
-              <p className="text-zinc-400 mb-8">{dict.contact.description}</p>
+              <p className="text-slate-600 dark:text-zinc-400 mb-8">{dict.contact.description}</p>
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-emerald-400/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-emerald-400" />
+                  <div className="w-12 h-12 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-lg flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">{dict.contact.email}</p>
-                    <p className="text-zinc-200">jorge@example.com</p>
+                    <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.email}</p>
+                    <p className="text-slate-900 dark:text-zinc-200">jorge@example.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-emerald-400/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-emerald-400" />
+                  <div className="w-12 h-12 bg-emerald-600/10 dark:bg-emerald-400/10 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">{dict.contact.location}</p>
-                    <p className="text-zinc-200">San Francisco, CA</p>
+                    <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.location}</p>
+                    <p className="text-slate-900 dark:text-zinc-200">San Francisco, CA</p>
                   </div>
                 </div>
               </div>
@@ -565,21 +641,21 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <div className="flex gap-4 mt-8">
                 <Link
                   href="#"
-                  className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors"
+                  className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
                 >
                   <Github className="w-5 h-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
                 <Link
                   href="#"
-                  className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors"
+                  className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
                 >
                   <Linkedin className="w-5 h-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
                   href="#"
-                  className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors"
+                  className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
                 >
                   <Mail className="w-5 h-5" />
                   <span className="sr-only">Email</span>
@@ -587,39 +663,39 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               </div>
             </div>
 
-            <div className="bg-zinc-800 rounded-xl border border-zinc-700 p-6">
-              <h3 className="text-xl font-bold mb-6">{dict.contact.formTitle}</h3>
+            <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 shadow-sm">
+              <h3 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">{dict.contact.formTitle}</h3>
 
               <form className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Input
                       placeholder={dict.contact.nameField}
-                      className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                      className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                     />
                   </div>
                   <div>
                     <Input
                       type="email"
                       placeholder={dict.contact.emailField}
-                      className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                      className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                     />
                   </div>
                 </div>
                 <div>
                   <Input
                     placeholder={dict.contact.subjectField}
-                    className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                    className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                   />
                 </div>
                 <div>
                   <Textarea
                     placeholder={dict.contact.messageField}
                     rows={5}
-                    className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                    className="bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                   />
                 </div>
-                <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white">
+                <Button className="w-full bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white">
                   <Send className="w-4 h-4 mr-2" />
                   {dict.contact.sendButton}
                 </Button>
@@ -630,29 +706,38 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-zinc-800">
+      <footer className="py-8 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <span className="text-xl font-medium text-white">
-                JM<span className="text-emerald-400">.</span>
+              <span className="text-xl font-medium text-slate-900 dark:text-white">
+                JM<span className="text-emerald-600 dark:text-emerald-400">.</span>
               </span>
             </div>
 
-            <p className="text-zinc-400 text-sm">
+            <p className="text-slate-600 dark:text-zinc-400 text-sm">
               © {new Date().getFullYear()} Jorge Muñoz Castillo. {dict.footer.rights}
             </p>
 
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>

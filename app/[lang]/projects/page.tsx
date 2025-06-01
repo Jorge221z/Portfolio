@@ -1,5 +1,5 @@
-import { getDictionary } from "./dictionaries"
-import Portfolio from "./components/portfolio"
+import { getDictionary } from "../dictionaries"
+import ProjectsPage from "./components/projects-page"
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "es" }]
@@ -13,5 +13,5 @@ export default async function Page({
   const { lang } = await params
   const dict = await getDictionary(lang as "en" | "es")
 
-  return <Portfolio dict={dict} lang={lang} />
+  return <ProjectsPage dict={dict} lang={lang} />
 }

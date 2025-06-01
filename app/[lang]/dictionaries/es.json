@@ -7,11 +7,14 @@
     "experience": "Experiencia",
     "contact": "Contacto"
   },
+  "language": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
   "hero": {
     "badge": "Desarrollador Full Stack",
-    "name": "Jorge Muñoz Castillo",
     "description": "Creando experiencias digitales excepcionales con tecnologías modernas y soluciones innovadoras.",
-    "getInTouch": "Contactar",
+    "getInTouch": "Contáctame",
     "viewProjects": "Ver proyectos",
     "years": "Años",
     "projects": "Proyectos",
@@ -20,19 +23,57 @@
   "projects": {
     "badge": "Portafolio",
     "title": "Proyectos Destacados",
-    "description": "Una selección de mi trabajo reciente. Cada proyecto representa un desafío y solución únicos.",
+    "description": "Una selección de mi trabajo reciente. Cada proyecto representa un desafío único y una solución.",
     "viewAll": "Ver Todos los Proyectos",
     "project1": {
       "title": "Plataforma E-Commerce",
-      "description": "Solución e-commerce full-stack con React, Node.js e integración con Stripe"
+      "description": "Solución e-commerce completa con React, Node.js e integración con Stripe"
     },
     "project2": {
       "title": "App Móvil de Fitness",
-      "description": "App multiplataforma de seguimiento fitness con sincronización en tiempo real"
+      "description": "Aplicación multiplataforma de seguimiento fitness con sincronización en tiempo real"
     },
     "project3": {
       "title": "Dashboard de Gestión de Tareas",
       "description": "Dashboard moderno para gestión de proyectos con funciones de colaboración en equipo"
+    }
+  },
+  "projectsPage": {
+    "title": "Todos los Proyectos",
+    "subtitle": "Explora mi portafolio completo de proyectos, desde aplicaciones web hasta apps móviles y soluciones innovadoras.",
+    "backToHome": "Volver al Inicio",
+    "searchPlaceholder": "Buscar proyectos...",
+    "categories": {
+      "all": "Todos los Proyectos",
+      "fullstack": "Full Stack",
+      "mobile": "Móvil",
+      "web": "Web",
+      "ai": "IA/ML",
+      "blockchain": "Blockchain",
+      "iot": "IoT"
+    },
+    "showingResults": "Mostrando",
+    "of": "de",
+    "projects": "proyectos",
+    "completed": "Completado",
+    "inProgress": "En Progreso",
+    "keyFeatures": "Características Clave",
+    "moreFeatures": "más características",
+    "viewDetails": "Ver Detalles",
+    "noResults": "No se encontraron proyectos",
+    "noResultsDescription": "Intenta ajustar tu búsqueda o criterios de filtro",
+    "clearFilters": "Limpiar Filtros",
+    "ctaTitle": "¿Interesado en trabajar juntos?",
+    "ctaDescription": "Hablemos sobre tu próximo proyecto y hagamos realidad tus ideas.",
+    "getInTouch": "Ponte en Contacto",
+    "project1": {
+      "longDescription": "Esta plataforma de e-commerce integral fue construida desde cero usando tecnologías web modernas. Incluye un sistema completo de carrito de compras, procesamiento seguro de pagos a través de Stripe, autenticación de usuarios, gestión de pedidos y un panel de administración para control de inventario. La plataforma es completamente responsiva y optimizada para rendimiento."
+    },
+    "project2": {
+      "longDescription": "Una aplicación móvil multiplataforma diseñada para entusiastas del fitness. La app rastrea entrenamientos, monitorea el progreso y proporciona planes de entrenamiento personalizados. Incluye sincronización de datos en tiempo real entre dispositivos, características sociales para compartir logros e integración con dispositivos wearables."
+    },
+    "project3": {
+      "longDescription": "Un dashboard moderno de gestión de proyectos construido con Next.js y TypeScript. Las características incluyen gestión de tareas, herramientas de colaboración en equipo, actualizaciones en tiempo real, compartir archivos y reportes comprehensivos. La aplicación usa Prisma para gestión de base de datos e incluye control de acceso basado en roles."
     }
   },
   "about": {
@@ -72,7 +113,7 @@
     },
     "exp3": {
       "title": "Desarrollador Frontend",
-      "company": "Digital Agency",
+      "company": "Agencia Digital",
       "period": "2018 - 2020",
       "description": "Creé interfaces web responsivas y mejoré la experiencia de usuario para varios clientes."
     }
@@ -81,21 +122,16 @@
     "badge": "Contacto",
     "title": "Ponte en Contacto",
     "description": "Siempre estoy interesado en escuchar sobre nuevas oportunidades y proyectos emocionantes. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
-    "email": "Correo",
+    "email": "Email",
     "location": "Ubicación",
     "formTitle": "Enviar un Mensaje",
     "nameField": "Tu Nombre",
-    "emailField": "Tu Correo",
+    "emailField": "Tu Email",
     "subjectField": "Asunto",
     "messageField": "Tu Mensaje",
     "sendButton": "Enviar Mensaje"
   },
   "footer": {
     "rights": "Todos los derechos reservados."
-  },
-  "language": {
-    "selector": "Idioma",
-    "english": "Inglés",
-    "spanish": "Español"
   }
 }

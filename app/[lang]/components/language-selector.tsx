@@ -26,22 +26,22 @@ export function LanguageSelector({ currentLang, dict }: LanguageSelectorProps) {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
+          className="gap-2 border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white"
         >
           <Globe className="h-4 w-4" />
           {currentLang.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-zinc-800 border-zinc-700">
+      <DropdownMenuContent align="end" className="bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700">
         <DropdownMenuItem
           onClick={() => switchLanguage("en")}
-          className="text-zinc-300 hover:bg-zinc-700 hover:text-white focus:bg-zinc-700 focus:text-white"
+          className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white"
         >
           🇺🇸 {dict.language.english}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => switchLanguage("es")}
-          className="text-zinc-300 hover:bg-zinc-700 hover:text-white focus:bg-zinc-700 focus:text-white"
+          className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white"
         >
           🇪🇸 {dict.language.spanish}
         </DropdownMenuItem>
