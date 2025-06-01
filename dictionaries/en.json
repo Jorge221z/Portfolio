@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Full Stack Developer",
+    "name": "Jorge Muñoz Castillo",
+    "description": "Crafting exceptional digital experiences with modern technologies and innovative solutions.",
+    "getInTouch": "Get in touch",
+    "viewProjects": "View projects",
+    "years": "Years",
+    "projects": "Projects",
+    "technologies": "Technologies"
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Featured Projects",
+    "description": "A selection of my recent work. Each project represents a unique challenge and solution.",
+    "viewAll": "View All Projects",
+    "project1": {
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with React, Node.js, and Stripe integration"
+    },
+    "project2": {
+      "title": "Mobile Fitness App",
+      "description": "Cross-platform fitness tracking app with real-time data sync"
+    },
+    "project3": {
+      "title": "Task Management Dashboard",
+      "description": "Modern dashboard for project management with team collaboration features"
+    }
+  },
+  "about": {
+    "badge": "About Me",
+    "title": "Passionate Developer & Problem Solver",
+    "description1": "I'm a full stack developer with over 5 years of experience creating innovative web and mobile applications. I love turning complex problems into simple, beautiful solutions that users love.",
+    "description2": "My expertise spans across modern frontend frameworks, robust backend systems, and cross-platform mobile development. I'm always eager to learn new technologies and tackle challenging projects.",
+    "location": "San Francisco, CA",
+    "availability": "Available for freelance",
+    "cleanCode": "Clean Code",
+    "mobileFirst": "Mobile First",
+    "scalable": "Scalable",
+    "optimized": "Optimized"
+  },
+  "skills": {
+    "badge": "Tech Stack",
+    "title": "Skills & Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "mobile": "Mobile",
+    "tools": "Tools"
+  },
+  "experience": {
+    "badge": "Work History",
+    "title": "Professional Experience",
+    "exp1": {
+      "title": "Senior Full Stack Developer",
+      "company": "Tech Solutions Inc.",
+      "period": "2022 - Present",
+      "description": "Lead development of scalable web applications and mobile solutions for enterprise clients."
+    },
+    "exp2": {
+      "title": "Mobile Developer",
+      "company": "StartupXYZ",
+      "period": "2020 - 2022",
+      "description": "Developed cross-platform mobile applications using React Native and Flutter."
+    },
+    "exp3": {
+      "title": "Frontend Developer",
+      "company": "Digital Agency",
+      "period": "2018 - 2020",
+      "description": "Created responsive web interfaces and improved user experience for various clients."
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Get In Touch",
+    "description": "I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!",
+    "email": "Email",
+    "location": "Location",
+    "formTitle": "Send a Message",
+    "nameField": "Your Name",
+    "emailField": "Your Email",
+    "subjectField": "Subject",
+    "messageField": "Your Message",
+    "sendButton": "Send Message"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "selector": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  }
+}

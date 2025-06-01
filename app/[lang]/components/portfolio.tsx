@@ -23,12 +23,18 @@ import {
   Menu,
   X,
 } from "lucide-react"
+import { LanguageSelector } from "./language-selector"
 
-export default function Portfolio() {
+interface PortfolioProps {
+  dict: any
+  lang: string
+}
+
+export default function Portfolio({ dict, lang }: PortfolioProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const sectionsRef = useRef({})
+  const sectionsRef = useRef<Record<string, HTMLElement | null>>({})
 
   useEffect(() => {
     setIsVisible(true)
@@ -47,7 +53,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
     if (section) {
       window.scrollTo({
@@ -67,24 +73,24 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
+      title: dict.projects.project1.title,
+      description: dict.projects.project1.description,
       image: "/placeholder.svg?height=300&width=500",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       github: "#",
       live: "#",
     },
     {
-      title: "Mobile Fitness App",
-      description: "Cross-platform fitness tracking app with real-time data sync",
+      title: dict.projects.project2.title,
+      description: dict.projects.project2.description,
       image: "/placeholder.svg?height=300&width=500",
       tech: ["React Native", "Firebase", "Redux"],
       github: "#",
       live: "#",
     },
     {
-      title: "Task Management Dashboard",
-      description: "Modern dashboard for project management with team collaboration features",
+      title: dict.projects.project3.title,
+      description: dict.projects.project3.description,
       image: "/placeholder.svg?height=300&width=500",
       tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
       github: "#",
@@ -94,22 +100,22 @@ export default function Portfolio() {
 
   const experience = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      description: "Lead development of scalable web applications and mobile solutions for enterprise clients.",
+      title: dict.experience.exp1.title,
+      company: dict.experience.exp1.company,
+      period: dict.experience.exp1.period,
+      description: dict.experience.exp1.description,
     },
     {
-      title: "Mobile Developer",
-      company: "StartupXYZ",
-      period: "2020 - 2022",
-      description: "Developed cross-platform mobile applications using React Native and Flutter.",
+      title: dict.experience.exp2.title,
+      company: dict.experience.exp2.company,
+      period: dict.experience.exp2.period,
+      description: dict.experience.exp2.description,
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2018 - 2020",
-      description: "Created responsive web interfaces and improved user experience for various clients.",
+      title: dict.experience.exp3.title,
+      company: dict.experience.exp3.company,
+      period: dict.experience.exp3.period,
+      description: dict.experience.exp3.description,
     },
   ]
 
@@ -135,13 +141,19 @@ export default function Portfolio() {
                     activeSection === section ? "text-emerald-400" : "text-zinc-400 hover:text-white"
                   }`}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {dict.nav[section]}
                 </button>
               ))}
             </nav>
 
+            {/* Desktop Controls */}
+            <div className="hidden md:flex items-center space-x-4">
+              <LanguageSelector currentLang={lang} dict={dict} />
+            </div>
+
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center space-x-2">
+              <LanguageSelector currentLang={lang} dict={dict} />
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="text-zinc-400 hover:text-white focus:outline-none"
@@ -166,7 +178,7 @@ export default function Portfolio() {
                       : "text-zinc-400 hover:bg-zinc-800 hover:text-white"
                   }`}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {dict.nav[section]}
                 </button>
               ))}
             </div>
@@ -185,7 +197,7 @@ export default function Portfolio() {
             >
               <div className="inline-block mb-4">
                 <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase border border-emerald-400/30 rounded-full px-3 py-1">
-                  Full Stack Developer
+                  {dict.hero.badge}
                 </span>
               </div>
 
@@ -193,16 +205,14 @@ export default function Portfolio() {
                 Jorge <span className="text-emerald-400">Muñoz</span> Castillo
               </h1>
 
-              <p className="text-xl text-zinc-400 mb-8 max-w-lg">
-                Crafting exceptional digital experiences with modern technologies and innovative solutions.
-              </p>
+              <p className="text-xl text-zinc-400 mb-8 max-w-lg">{dict.hero.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-12">
                 <Button
                   onClick={() => scrollToSection("contact")}
                   className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-md px-6 py-2.5"
                 >
-                  Get in touch
+                  {dict.hero.getInTouch}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
 
@@ -211,7 +221,7 @@ export default function Portfolio() {
                   variant="outline"
                   className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md px-6 py-2.5"
                 >
-                  View projects
+                  {dict.hero.viewProjects}
                 </Button>
               </div>
 
@@ -245,19 +255,19 @@ export default function Portfolio() {
                     <div className="text-center">
                       <Code className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
                       <h3 className="text-2xl font-bold mb-2">Jorge Muñoz</h3>
-                      <p className="text-zinc-400 mb-6">Full Stack Developer</p>
+                      <p className="text-zinc-400 mb-6">{dict.hero.badge}</p>
                       <div className="flex justify-center gap-4">
                         <div className="text-center">
                           <div className="text-2xl font-bold text-white">5+</div>
-                          <div className="text-xs text-zinc-500">Years</div>
+                          <div className="text-xs text-zinc-500">{dict.hero.years}</div>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-white">50+</div>
-                          <div className="text-xs text-zinc-500">Projects</div>
+                          <div className="text-xs text-zinc-500">{dict.hero.projects}</div>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-white">20+</div>
-                          <div className="text-xs text-zinc-500">Technologies</div>
+                          <div className="text-xs text-zinc-500">{dict.hero.technologies}</div>
                         </div>
                       </div>
                     </div>
@@ -278,12 +288,12 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
             <div>
-              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">Portfolio</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2">Featured Projects</h2>
+              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">
+                {dict.projects.badge}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2">{dict.projects.title}</h2>
             </div>
-            <p className="text-zinc-400 mt-4 md:mt-0 max-w-md">
-              A selection of my recent work. Each project represents a unique challenge and solution.
-            </p>
+            <p className="text-zinc-400 mt-4 md:mt-0 max-w-md">{dict.projects.description}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -337,7 +347,7 @@ export default function Portfolio() {
               variant="outline"
               className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md px-6 py-2.5"
             >
-              View All Projects
+              {dict.projects.viewAll}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -356,19 +366,19 @@ export default function Portfolio() {
                     <div className="grid grid-cols-2 gap-4 w-full">
                       <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
                         <Code className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">Clean Code</span>
+                        <span className="text-sm text-zinc-300">{dict.about.cleanCode}</span>
                       </div>
                       <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
                         <Smartphone className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">Mobile First</span>
+                        <span className="text-sm text-zinc-300">{dict.about.mobileFirst}</span>
                       </div>
                       <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
                         <Server className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">Scalable</span>
+                        <span className="text-sm text-zinc-300">{dict.about.scalable}</span>
                       </div>
                       <div className="aspect-square bg-zinc-700/50 rounded-lg p-4 flex flex-col items-center justify-center">
                         <Database className="h-8 w-8 text-emerald-400 mb-2" />
-                        <span className="text-sm text-zinc-300">Optimized</span>
+                        <span className="text-sm text-zinc-300">{dict.about.optimized}</span>
                       </div>
                     </div>
                   </div>
@@ -381,28 +391,22 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">About Me</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Passionate Developer & Problem Solver</h2>
+              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">{dict.about.badge}</span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">{dict.about.title}</h2>
 
               <div className="space-y-6 text-zinc-300">
-                <p>
-                  I'm a full stack developer with over 5 years of experience creating innovative web and mobile
-                  applications. I love turning complex problems into simple, beautiful solutions that users love.
-                </p>
-                <p>
-                  My expertise spans across modern frontend frameworks, robust backend systems, and cross-platform
-                  mobile development. I'm always eager to learn new technologies and tackle challenging projects.
-                </p>
+                <p>{dict.about.description1}</p>
+                <p>{dict.about.description2}</p>
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center gap-3 bg-zinc-800/50 rounded-lg px-4 py-3 border border-zinc-700">
                   <MapPin className="w-5 h-5 text-emerald-400" />
-                  <span className="text-zinc-300">San Francisco, CA</span>
+                  <span className="text-zinc-300">{dict.about.location}</span>
                 </div>
                 <div className="flex items-center gap-3 bg-zinc-800/50 rounded-lg px-4 py-3 border border-zinc-700">
                   <Calendar className="w-5 h-5 text-emerald-400" />
-                  <span className="text-zinc-300">Available for freelance</span>
+                  <span className="text-zinc-300">{dict.about.availability}</span>
                 </div>
               </div>
             </div>
@@ -414,8 +418,8 @@ export default function Portfolio() {
       <section id="skills" className="py-24 bg-zinc-900" ref={(el) => (sectionsRef.current.skills = el)}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">Tech Stack</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">Skills & Technologies</h2>
+            <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">{dict.skills.badge}</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">{dict.skills.title}</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -424,7 +428,7 @@ export default function Portfolio() {
                 <div className="p-2 rounded-lg bg-emerald-400/10">
                   <Code className="w-5 h-5 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">Frontend</h3>
+                <h3 className="text-xl font-medium">{dict.skills.frontend}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -441,7 +445,7 @@ export default function Portfolio() {
                 <div className="p-2 rounded-lg bg-emerald-400/10">
                   <Server className="w-5 h-5 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">Backend</h3>
+                <h3 className="text-xl font-medium">{dict.skills.backend}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -458,7 +462,7 @@ export default function Portfolio() {
                 <div className="p-2 rounded-lg bg-emerald-400/10">
                   <Smartphone className="w-5 h-5 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">Mobile</h3>
+                <h3 className="text-xl font-medium">{dict.skills.mobile}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -475,7 +479,7 @@ export default function Portfolio() {
                 <div className="p-2 rounded-lg bg-emerald-400/10">
                   <Database className="w-5 h-5 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-medium">Tools</h3>
+                <h3 className="text-xl font-medium">{dict.skills.tools}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -494,8 +498,10 @@ export default function Portfolio() {
       <section id="experience" className="py-24" ref={(el) => (sectionsRef.current.experience = el)}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">Work History</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">Professional Experience</h2>
+            <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              {dict.experience.badge}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">{dict.experience.title}</h2>
           </div>
 
           <div className="space-y-8">
@@ -527,13 +533,12 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">Contact</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Get In Touch</h2>
+              <span className="text-emerald-400 text-sm font-medium tracking-wider uppercase">
+                {dict.contact.badge}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">{dict.contact.title}</h2>
 
-              <p className="text-zinc-400 mb-8">
-                I'm always interested in hearing about new opportunities and exciting projects. Whether you have a
-                question or just want to say hi, feel free to reach out!
-              </p>
+              <p className="text-zinc-400 mb-8">{dict.contact.description}</p>
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -541,7 +546,7 @@ export default function Portfolio() {
                     <Mail className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">Email</p>
+                    <p className="text-sm text-zinc-400">{dict.contact.email}</p>
                     <p className="text-zinc-200">jorge@example.com</p>
                   </div>
                 </div>
@@ -551,7 +556,7 @@ export default function Portfolio() {
                     <MapPin className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">Location</p>
+                    <p className="text-sm text-zinc-400">{dict.contact.location}</p>
                     <p className="text-zinc-200">San Francisco, CA</p>
                   </div>
                 </div>
@@ -583,40 +588,40 @@ export default function Portfolio() {
             </div>
 
             <div className="bg-zinc-800 rounded-xl border border-zinc-700 p-6">
-              <h3 className="text-xl font-bold mb-6">Send a Message</h3>
+              <h3 className="text-xl font-bold mb-6">{dict.contact.formTitle}</h3>
 
               <form className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Input
-                      placeholder="Your Name"
+                      placeholder={dict.contact.nameField}
                       className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                     />
                   </div>
                   <div>
                     <Input
                       type="email"
-                      placeholder="Your Email"
+                      placeholder={dict.contact.emailField}
                       className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                     />
                   </div>
                 </div>
                 <div>
                   <Input
-                    placeholder="Subject"
+                    placeholder={dict.contact.subjectField}
                     className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                   />
                 </div>
                 <div>
                   <Textarea
-                    placeholder="Your Message"
+                    placeholder={dict.contact.messageField}
                     rows={5}
                     className="bg-zinc-700 border-zinc-600 text-white placeholder:text-zinc-400 focus:border-emerald-500 focus:ring-emerald-500/20"
                   />
                 </div>
                 <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white">
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {dict.contact.sendButton}
                 </Button>
               </form>
             </div>
@@ -635,7 +640,7 @@ export default function Portfolio() {
             </div>
 
             <p className="text-zinc-400 text-sm">
-              © {new Date().getFullYear()} Jorge Muñoz Castillo. All rights reserved.
+              © {new Date().getFullYear()} Jorge Muñoz Castillo. {dict.footer.rights}
             </p>
 
             <div className="flex gap-4 mt-4 md:mt-0">

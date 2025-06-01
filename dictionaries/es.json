@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Desarrollador Full Stack",
+    "name": "Jorge Muñoz Castillo",
+    "description": "Creando experiencias digitales excepcionales con tecnologías modernas y soluciones innovadoras.",
+    "getInTouch": "Contactar",
+    "viewProjects": "Ver proyectos",
+    "years": "Años",
+    "projects": "Proyectos",
+    "technologies": "Tecnologías"
+  },
+  "projects": {
+    "badge": "Portafolio",
+    "title": "Proyectos Destacados",
+    "description": "Una selección de mi trabajo reciente. Cada proyecto representa un desafío y solución únicos.",
+    "viewAll": "Ver Todos los Proyectos",
+    "project1": {
+      "title": "Plataforma E-Commerce",
+      "description": "Solución e-commerce full-stack con React, Node.js e integración con Stripe"
+    },
+    "project2": {
+      "title": "App Móvil de Fitness",
+      "description": "App multiplataforma de seguimiento fitness con sincronización en tiempo real"
+    },
+    "project3": {
+      "title": "Dashboard de Gestión de Tareas",
+      "description": "Dashboard moderno para gestión de proyectos con funciones de colaboración en equipo"
+    }
+  },
+  "about": {
+    "badge": "Acerca de Mí",
+    "title": "Desarrollador Apasionado y Solucionador de Problemas",
+    "description1": "Soy un desarrollador full stack con más de 5 años de experiencia creando aplicaciones web y móviles innovadoras. Me encanta convertir problemas complejos en soluciones simples y hermosas que los usuarios aman.",
+    "description2": "Mi experiencia abarca frameworks frontend modernos, sistemas backend robustos y desarrollo móvil multiplataforma. Siempre estoy ansioso por aprender nuevas tecnologías y abordar proyectos desafiantes.",
+    "location": "San Francisco, CA",
+    "availability": "Disponible para freelance",
+    "cleanCode": "Código Limpio",
+    "mobileFirst": "Mobile First",
+    "scalable": "Escalable",
+    "optimized": "Optimizado"
+  },
+  "skills": {
+    "badge": "Stack Tecnológico",
+    "title": "Habilidades y Tecnologías",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "mobile": "Móvil",
+    "tools": "Herramientas"
+  },
+  "experience": {
+    "badge": "Historial Laboral",
+    "title": "Experiencia Profesional",
+    "exp1": {
+      "title": "Desarrollador Full Stack Senior",
+      "company": "Tech Solutions Inc.",
+      "period": "2022 - Presente",
+      "description": "Lidero el desarrollo de aplicaciones web escalables y soluciones móviles para clientes empresariales."
+    },
+    "exp2": {
+      "title": "Desarrollador Móvil",
+      "company": "StartupXYZ",
+      "period": "2020 - 2022",
+      "description": "Desarrollé aplicaciones móviles multiplataforma usando React Native y Flutter."
+    },
+    "exp3": {
+      "title": "Desarrollador Frontend",
+      "company": "Digital Agency",
+      "period": "2018 - 2020",
+      "description": "Creé interfaces web responsivas y mejoré la experiencia de usuario para varios clientes."
+    }
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "Ponte en Contacto",
+    "description": "Siempre estoy interesado en escuchar sobre nuevas oportunidades y proyectos emocionantes. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
+    "email": "Correo",
+    "location": "Ubicación",
+    "formTitle": "Enviar un Mensaje",
+    "nameField": "Tu Nombre",
+    "emailField": "Tu Correo",
+    "subjectField": "Asunto",
+    "messageField": "Tu Mensaje",
+    "sendButton": "Enviar Mensaje"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+  "language": {
+    "selector": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  }
+}
