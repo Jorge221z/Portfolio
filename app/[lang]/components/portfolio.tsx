@@ -675,7 +675,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   </div>
                   <div>
                     <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.email}</p>
-                    <p className="text-slate-900 dark:text-zinc-200">jorge@example.com</p>
+                    <p className="text-slate-900 dark:text-zinc-200">jorgemunozcast12@gmail.com</p>
                   </div>
                 </div>
 
@@ -685,28 +685,30 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   </div>
                   <div>
                     <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.location}</p>
-                    <p className="text-slate-900 dark:text-zinc-200">San Francisco, CA</p>
+                    <p className="text-slate-900 dark:text-zinc-200">{dict.about.location}</p>
                   </div>
                 </div>
               </div>
 
               <div className="flex gap-4 mt-8">
                 <Link
-                  href="#"
+                  href="https://github.com/Jorge221z"
+                  target="_blank"
                   className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
                 >
                   <Github className="w-5 h-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/jorge-muñoz-castillo"
                   className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
                 >
                   <Linkedin className="w-5 h-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="mailto:jorgemunozcast12@gmail.com"
+                  target="_blank"
                   className="w-10 h-10 bg-white dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors border border-zinc-200 dark:border-zinc-700"
                 >
                   <Mail className="w-5 h-5" />
@@ -763,7 +765,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <span className="text-xl font-medium text-slate-900 dark:text-white">
-                JM<span className="text-emerald-600 dark:text-emerald-400">.</span>
+                JMC<span className="text-emerald-600 dark:text-emerald-400">.</span>
               </span>
             </div>
 
@@ -773,21 +775,24 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link
-                href="#"
+                href="https://github.com/Jorge221z"
+                target="_blank"
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/jorge-muñoz-castillo"
+                target="_blank"
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="#"
+                href="mailto:jorgemunozcast12@gmail.com"
+                target="_blank"
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               >
                 <Mail className="h-5 w-5" />
