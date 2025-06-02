@@ -13,7 +13,7 @@
   },
   "hero": {
     "badge": "Desarrollador Web Full Stack & Mobile",
-    "description": "Creando experiencias digitales excepcionales con tecnologías modernas y soluciones innovadoras.",
+    "description": "De la idea al producto: desarrollo claro, moderno y orientado a resultados. Tecnología que suma.",
     "getInTouch": "Contáctame",
     "viewProjects": "Ver proyectos",
     "years": "Años",
@@ -78,15 +78,15 @@
   },
   "about": {
     "badge": "Acerca de Mí",
-    "title": "Desarrollador Apasionado y Solucionador de Problemas",
-    "description1": "Soy un desarrollador full stack con más de 5 años de experiencia creando aplicaciones web y móviles innovadoras. Me encanta convertir problemas complejos en soluciones simples y hermosas que los usuarios aman.",
-    "description2": "Mi experiencia abarca frameworks frontend modernos, sistemas backend robustos y desarrollo móvil multiplataforma. Siempre estoy ansioso por aprender nuevas tecnologías y abordar proyectos desafiantes.",
+    "title": "Apasionado por el desarrollo, la innovación y el avance.",
+    "description1": "Soy desarrollador full stack, especializado en crear aplicaciones web y móviles innovadoras. Me apasiona crear soluciones modernas que aporten mi granito de arena en la sociedad.",
+    "description2": "Mi experiencia abarca el desarollo de proyectos siempre con un problema real en mente, desde la conceptualización hasta la implementación. Me enfoco en crear aplicaciones intuitivas y eficientes que mejoren la experiencia del usuario.",
     "location": "Yecla, Murcia, España",
     "availability": "Disponible para relocalización",
     "dockerization": "Dockerización",
     "restApiDevelopment": "Desarrollo de APIs REST",
     "deploymentScripting": "Despliegue en VPS & Bash Scripting",
-    "aiImplementation": "Implementación con IA"
+    "aiImplementation": "Implementación de IA"
   },
   "skills": {
     "badge": "Stack Tecnológico",
@@ -103,13 +103,13 @@
       "title": "Desarrollador de Plugins & Soluciones Web",
       "company": "Skills Divers",
       "period": "Febrero 2025 - Presente",
-      "description": "Desarrollo de plugins nativos especializados para Moodle y WordPress, así como aplicaciones web robustas con Laravel para proyectos europeos. Colaboración en equipos internacionales utilizando inglés como idioma de trabajo, enfocado en crear soluciones educativas innovadoras y plataformas de gestión de contenido personalizadas."
+      "description": "Desarrollo plugins nativos especializados para Moodle y WordPress, además de aplicaciones web sólidas con Laravel para proyectos europeos. Trabajo en equipos internacionales usando inglés como idioma de comunicación, siempre centrado en crear soluciones educativas innovadoras y plataformas de gestión de contenido a medida."
     }
   },
   "contact": {
     "badge": "Contacto",
     "title": "Ponte en Contacto",
-    "description": "Siempre estoy interesado en escuchar sobre nuevas oportunidades y proyectos emocionantes. Tengo total disponibilidad para mudarme a cualquier ciudad. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
+    "description": "Estoy siempre abierto a nuevas oportunidades y proyectos interesantes.\nTengo plena disponibilidad para mudarme a cualquier ciudad.",
     "email": "Email",
     "location": "Ubicación",
     "formTitle": "Enviar un Mensaje",

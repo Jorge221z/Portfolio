@@ -379,7 +379,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       {/* Projects Section */}
       <section
         id="projects"
-        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        className="py-8 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
         ref={(el) => (sectionsRef.current.projects = el)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -514,7 +514,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       {/* About Section */}
       <section
         id="about"
-        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        className="py-8 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
         ref={(el) => (sectionsRef.current.about = el)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -704,7 +704,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        className="py-8 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
         ref={(el) => (sectionsRef.current.contact = el)}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -716,7 +716,9 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               {dict.contact.title}
             </h2>
 
-            <p className="text-slate-600 dark:text-zinc-400 mb-12 max-w-2xl mx-auto">{dict.contact.description}</p>
+            <p className="text-lg text-slate-600 dark:text-zinc-400 mb-12 whitespace-pre-line">
+              {dict.contact.description}
+            </p>
           </div>
 
           <div className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-8 shadow-sm">

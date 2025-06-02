@@ -13,7 +13,7 @@
   },
   "hero": {
     "badge": "Full Stack Web & Mobile Developer",
-    "description": "Crafting exceptional digital experiences with modern technologies and innovative solutions.",
+    "description": "From idea to product: clear, modern, and results-focused development. Technology that makes a difference.",
     "getInTouch": "Get in touch",
     "viewProjects": "View projects",
     "years": "Years",
@@ -78,9 +78,9 @@
   },
   "about": {
     "badge": "About Me",
-    "title": "Passionate Developer & Problem Solver",
-    "description1": "I'm a full stack developer with over 5 years of experience creating innovative web and mobile applications. I love turning complex problems into simple, beautiful solutions that users love.",
-    "description2": "My expertise spans across modern frontend frameworks, robust backend systems, and cross-platform mobile development. I'm always eager to learn new technologies and tackle challenging projects.",
+    "title": "Passionate about development, innovation, and progress.",
+    "description1": "I’m a full stack developer specializing in building innovative web and mobile applications. I’m passionate about creating modern solutions that make a positive impact on society.",
+    "description2": "My experience covers developing projects always with a real problem in mind, from concept to implementation. I focus on creating intuitive and efficient applications that enhance the user experience.",
     "location": "Yecla, Murcia, Spain",
     "availability": "Available for relocation",
     "dockerization": "Dockerization",
@@ -109,7 +109,7 @@
   "contact": {
     "badge": "Contact",
     "title": "Get In Touch",
-    "description": "I'm always interested in hearing about new opportunities and exciting projects. I have full availability to relocate to any city. Whether you have a question or just want to say hi, feel free to reach out!",
+    "description": "I’m always open to new opportunities and exciting projects.\nI’m fully available to relocate to any city.",
     "email": "Email",
     "location": "Location",
     "formTitle": "Send a Message",
