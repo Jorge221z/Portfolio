@@ -26,9 +26,14 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
+      <head>
+        <meta name="view-transition" content="same-origin" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
+          <div id="page-transition-container" className="min-h-screen">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

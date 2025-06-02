@@ -16,9 +16,30 @@ interface ProjectsPageProps {
 }
 
 export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
-  // Reset scroll to top when component mounts
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [isTransitioning, setIsTransitioning] = useState(true)
+
+  // Smooth transition when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // Smooth scroll to top
+    window.scrollTo({ 
+      top: 0, 
+      behavior: "smooth"
+    })
+    
+    // Simple staggered loading
+    const timer1 = setTimeout(() => {
+      setIsTransitioning(false)
+    }, 100)
+    
+    const timer2 = setTimeout(() => {
+      setIsLoaded(true)
+    }, 300)
+
+    return () => {
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+    }
   }, [])
 
   const projects = [
@@ -221,17 +242,17 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300">
+    <div className={`min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-all duration-500 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
       {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-slate-50/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800 transition-colors duration-300">
+      <header className={`sticky top-0 z-50 bg-slate-50/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800 transition-all duration-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
               <Link
                 href={`/${lang}`}
-                className="flex items-center gap-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                className="flex items-center gap-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
               >
-                <ArrowLeft className="h-5 w-5" />
+                <ArrowLeft className="h-5 w-5 transition-transform duration-300 hover:-translate-x-1" />
                 <span className="text-sm font-medium">{dict.projectsPage?.backToHome || "Back to Home"}</span>
               </Link>
               <div className="h-6 w-px bg-slate-300 dark:bg-zinc-700"></div>
@@ -249,13 +270,13 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-zinc-950 dark:to-zinc-900">
+      <section className={`py-16 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-zinc-950 dark:to-zinc-900 transition-all duration-500 delay-100 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
+            <h1 className={`text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white transition-all duration-600 delay-150 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
               {dict.projectsPage?.title || "All Projects"}
             </h1>
-            <p className="text-xl text-slate-600 dark:text-zinc-400 max-w-3xl mx-auto">
+            <p className={`text-xl text-slate-600 dark:text-zinc-400 max-w-3xl mx-auto transition-all duration-600 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
               {dict.projectsPage?.subtitle ||
                 "Explore my complete portfolio of projects, from web applications to mobile apps and innovative solutions."}
             </p>

@@ -481,10 +481,6 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             >
               <Link
                 href={`/${lang}/projects`}
-                onClick={() => {
-                  // Smooth scroll to top before navigation
-                  window.scrollTo({ top: 0, behavior: "smooth" })
-                }}
                 className="flex items-center relative z-10"
               >
                 <span className="mr-3 tracking-wide">{dict.projects.viewAll}</span>

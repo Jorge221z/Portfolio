@@ -2,7 +2,7 @@
 import { useRouter, usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Globe } from "lucide-react"
+import { Check, ChevronDown } from "lucide-react"
 
 interface LanguageSelectorProps {
   currentLang: string
@@ -20,30 +20,45 @@ export function LanguageSelector({ currentLang, dict }: LanguageSelectorProps) {
     router.push(newPath)
   }
 
+  const languages = {
+    en: { flag: "🇬🇧", name: dict.language.english },
+    es: { flag: "🇪🇸", name: dict.language.spanish }
+  }
+
+  const currentLanguage = languages[currentLang as keyof typeof languages]
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white"
+          className="gap-2 border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white min-w-[100px] justify-between"
         >
-          <Globe className="h-4 w-4" />
-          {currentLang.toUpperCase()}
+          <span className="font-bold">{currentLanguage?.name}</span>
+          <ChevronDown className="h-3 w-3 opacity-50" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700">
+      <DropdownMenuContent align="end" className="bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 min-w-[120px]">
         <DropdownMenuItem
           onClick={() => switchLanguage("en")}
-          className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white"
+          className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white cursor-pointer flex items-center justify-between"
         >
-          🇺🇸 {dict.language.english}
+          <div className="flex items-center gap-2">
+            <span className="text-base">🇬🇧</span>
+            <span className="font-bold">{dict.language.english}</span>
+          </div>
+          {currentLang === "en" && <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => switchLanguage("es")}
-          className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white"
+          className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white cursor-pointer flex items-center justify-between"
         >
-          🇪🇸 {dict.language.spanish}
+          <div className="flex items-center gap-2">
+            <span className="text-base">🇪🇸</span>
+            <span className="font-bold">{dict.language.spanish}</span>
+          </div>
+          {currentLang === "es" && <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
