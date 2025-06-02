@@ -74,19 +74,45 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-secondary;
+  background: rgba(244, 244, 245, 0.5);
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(39, 39, 42, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground/30 rounded-full;
+  background: rgba(5, 150, 105, 0.6);
+  border-radius: 10px;
+  transition: background 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted-foreground/50;
+  background: rgba(5, 150, 105, 0.8);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.8);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(5, 150, 105, 0.6) rgba(244, 244, 245, 0.5);
+}
+
+.dark * {
+  scrollbar-color: rgba(16, 185, 129, 0.6) rgba(39, 39, 42, 0.5);
 }
 
 /* Light theme specific improvements */
