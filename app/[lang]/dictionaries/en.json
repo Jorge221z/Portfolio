@@ -23,19 +23,23 @@
   "projects": {
     "badge": "Portfolio",
     "title": "Featured Projects",
-    "description": "A selection of my recent work. Each project represents a unique challenge and solution.",
+    "description": "A selection of my recent work.\nEach project represents a unique challenge and solution.",
     "viewAll": "View All Projects",
     "project1": {
-      "title": "E-Commerce Platform",
-      "description": "Full-stack e-commerce solution with React, Node.js, and Stripe integration"
+      "title": "Script2me",
+      "description": "A solution to the limitations of AI chatbots, such as restricted file attachments, with a platform that accelerates the development of any type of web or mobile application using AI."
     },
     "project2": {
-      "title": "Mobile Fitness App",
-      "description": "Cross-platform fitness tracking app with real-time data sync"
+      "title": "EmpleaWorks",
+      "description": "A website for job searching and posting job offers, featuring user management and secure authentication. Focused on the Murcia region, Spain."
     },
     "project3": {
-      "title": "Task Management Dashboard",
-      "description": "Modern dashboard for project management with team collaboration features"
+      "title": "EmpleaWorks - Mobile App",
+      "description": "Mobile application derived from the EmpleaWorks website, allowing users to search for jobs from their mobile devices. Features real-time notifications and an intuitive interface."
+    },
+    "project4": {
+      "title": "AI Chatbot REST API",
+      "description": "AI Chatbot REST API that uses Google Gemini API to simulate LLM behavior, providing many possibilities to users."
     }
   },
   "projectsPage": {
@@ -60,12 +64,82 @@
     "keyFeatures": "Key Features",
     "moreFeatures": "more features",
     "viewDetails": "View Details",
+    "visitWebsite": "Visit Website",
+    "downloadApp": "Download APK",
+    "visitRepository": "Visit Repository",
     "noResults": "No projects found",
     "noResultsDescription": "Try adjusting your search or filter criteria",
     "clearFilters": "Clear Filters",
     "ctaTitle": "Interested in working together?",
-    "ctaDescription": "Let's discuss your next project and bring your ideas to life.",
+    "ctaDescription": "We can talk via  email or LinkedIn. I am always open to new opportunities and collaborations.",
     "getInTouch": "Get In Touch",
+    "individualProject": "Individual Project",
+    "developers": "developers",
+    "months": "months",
+    "duration": "Duration",
+    "team": "Team",
+    "date": "Date",
+    "status": "Status",
+    "features": {
+      "project1": [
+        "Google Gemini API usage",
+        "Optimized prompt generation",
+        "Real-time code refactoring",
+        "Code vulnerability scanner"
+      ],
+      "project2": [
+        "Candidates can create profiles and apply to offers",
+        "Companies can publish job offers",
+        "Email verification and Google authentication",
+        "Modular and reusable components"
+      ],
+      "project3": [
+        "Native mobile application",
+        "Push notifications",
+        "Conexion with EmpleaWorks API",
+        "Intuitive and modern interface"
+      ],
+      "project4": [
+        "Natural language responses through advanced text processing",
+        "Easy integration with web and mobile applications",
+        "Context management for coherent conversations",
+        "Scalability to support multiple simultaneous users"
+      ],
+      "project5": [
+        "Authentication with Laravel Sanctum",
+        "API response pagination",
+        "Axios for API calls",
+        "Modern and responsive user interface"
+      ],
+      "project6": [
+        "Wine inventory management",
+        "Sales analytics",
+        "Supplier management",
+        "Restock alerts"
+      ]
+    },
+    "projectTitles": {
+      "project3": "Analytics Dashboard",
+      "project4": "AI Chatbot REST API",
+      "project5": "Dev-Horizon",
+      "project6": "Vinoteca"
+    },
+    "projectDescriptions": {
+      "project3": "Mobile application derived from the EmpleaWorks website, allows users to search for jobs from their mobile devices. Includes real-time notifications and an intuitive interface.",
+      "project4": "AI Chatbot REST API that uses Google Gemini API to simulate LLM behavior, providing many possibilities to users.",
+      "project5": "Mobile application with token authentication that connects to a REST API developed with Laravel to serve data.",
+      "project6": "Wine store with CRUD operations for wines, category management and shopping cart. Includes authentication system and user management."
+    },
+    "projectLongDescriptions": {
+      "project3": "An enterprise-grade analytics dashboard that leverages artificial intelligence to provide deep insights into business data. The platform includes machine learning models for predictive analytics, automated report generation, and real-time data visualization. Built with modern technologies and designed for scalability.",
+      "project4": "An AI Chatbot REST API that uses Google Gemini API to simulate advanced language model behavior. Provides natural language responses through advanced text processing, easy integration with web and mobile applications, context management for coherent conversations, and scalability to support multiple simultaneous users.",
+      "project5": "A collaborative development platform designed for programming teams. Includes project management tools, integrated version control, issue tracking, sprint planning, and team performance metrics. Built with modern technologies to facilitate effective collaboration.",
+      "project6": "A comprehensive inventory management system specifically designed for wine cellars and wineries. Includes stock tracking, sales analytics, supplier management, restock alerts, and detailed reporting. The application is optimized for handling products with specific characteristics like vintage, region, and variety."
+    },
+    "teamInfo": {
+      "individualProject": "Individual Project",
+      "developers": "developers"
+    },
     "project1": {
       "longDescription": "This comprehensive e-commerce platform was built from the ground up using modern web technologies. It features a complete shopping cart system, secure payment processing through Stripe, user authentication, order management, and an admin dashboard for inventory control. The platform is fully responsive and optimized for performance."
     },

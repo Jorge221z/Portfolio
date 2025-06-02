@@ -6,10 +6,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, ExternalLink, ArrowLeft, Calendar, Users, Clock, Star, Filter, Search } from "lucide-react"
+import { Github, ExternalLink, ArrowLeft, Calendar, Users, Clock, Star, Download } from "lucide-react"
 import { LanguageSelector } from "../../components/language-selector"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Input } from "@/components/ui/input"
 
 interface ProjectsPageProps {
   dict: any
@@ -17,9 +16,6 @@ interface ProjectsPageProps {
 }
 
 export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-
   // Reset scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -32,30 +28,27 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
       description: dict.projects.project1.description,
       longDescription:
         dict.projectsPage?.project1?.longDescription ||
+        dict.projectsPage?.projectLongDescriptions?.project1 ||
         "This comprehensive e-commerce platform was built from the ground up using modern web technologies. It features a complete shopping cart system, secure payment processing through Stripe, user authentication, order management, and an admin dashboard for inventory control. The platform is fully responsive and optimized for performance.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: lang === "en" ? "/s2me-ingles.png" : "/s2me-español.png",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        lang === "en" ? "/s2me-ingles.png" : "/ew-español.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Express", "JWT"],
+      tech: ["React.js", "Laravel", "Google Gemini API", "MySQL"],
       category: "fullstack",
-      github: "#",
-      live: "#",
-      date: "2023",
-      duration: "3 months",
-      team: "4 developers",
+      github: "https://github.com/Jorge221z/Script2me",
+      live: "https://script2.me",
+      date: "2025",
+      duration: `3 ${dict.projectsPage?.months || "months"}`,
+      team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
       status: "completed",
-      features: [
-        "User authentication & authorization",
-        "Shopping cart & checkout system",
-        "Payment processing with Stripe",
-        "Admin dashboard",
-        "Inventory management",
-        "Order tracking",
-        "Responsive design",
-        "SEO optimization",
+      features: dict.projectsPage?.features?.project1 || [
+        "Uso de la API de Google Gemini",
+        "Funcion para generar prompts optimizados",
+        "Refactorización de código en tiempo real",
+        "Escaner de vulnerabilidades en el código",
       ],
     },
     {
@@ -64,116 +57,113 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
       description: dict.projects.project2.description,
       longDescription:
         dict.projectsPage?.project2?.longDescription ||
+        dict.projectsPage?.projectLongDescriptions?.project2 ||
         "A cross-platform mobile application designed for fitness enthusiasts. The app tracks workouts, monitors progress, and provides personalized training plans. It features real-time data synchronization across devices, social features for sharing achievements, and integration with wearable devices.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: lang === "en" ? "/ew-ingles.png" : "/ew-español.png",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        lang === "en" ? "/ew-ingles.png" : "/ew-español.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["React Native", "Firebase", "Redux", "Expo", "TypeScript"],
-      category: "mobile",
-      github: "#",
-      live: "#",
-      date: "2023",
-      duration: "4 months",
-      team: "3 developers",
+      tech: ["React", "Laravel", "Mailgun", "TypeScript", "Inertia"],
+      category: "web",
+      github: "https://github.com/Jorge221z/EmpleaWorks",
+      live: "https://emplea.works/",
+      date: "2025",
+      duration: `4 ${dict.projectsPage?.months || "months"}`,
+      team: `2 ${dict.projectsPage?.teamInfo?.developers || dict.projectsPage?.developers || "developers"}`,
       status: "completed",
-      features: [
-        "Workout tracking",
-        "Progress monitoring",
-        "Social features",
-        "Wearable device integration",
-        "Offline mode",
-        "Push notifications",
-        "Custom workout plans",
-        "Achievement system",
+      features: dict.projectsPage?.features?.project2 || [
+        "Permite a candidatos crear su perfil y aplicar a ofertas",
+        "Las empresas pueden publicar sus ofertas de trabajo",
+        "Verificacion de email y autenticación con Google",
+        "Componentes modulares y reutilizables",
       ],
     },
     {
       id: 3,
       title: dict.projects.project3.title,
-      description: dict.projects.project3.description,
+      description: dict.projectsPage?.projectDescriptions?.project3 || dict.projects.project3.description || "Advanced analytics platform with machine learning insights and predictive modeling capabilities.",
       longDescription:
-        dict.projectsPage?.project3?.longDescription ||
-        "A modern project management dashboard built with Next.js and TypeScript. Features include task management, team collaboration tools, real-time updates, file sharing, and comprehensive reporting. The application uses Prisma for database management and includes role-based access control.",
-      image: "/placeholder.svg?height=400&width=600",
+        dict.projectsPage?.projectLongDescriptions?.project3 ||
+        "An enterprise-grade analytics dashboard that leverages artificial intelligence to provide deep insights into business data. The platform includes machine learning models for predictive analytics, automated report generation, and real-time data visualization. Built with modern technologies and designed for scalability.",
+      image: "/collage.jpg",
       images: [
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS", "NextAuth"],
-      category: "web",
-      github: "#",
-      live: "#",
-      date: "2024",
-      duration: "5 months",
-      team: "5 developers",
+      tech: ["React Native", "Expo", "GoogleCloud", "TypeScript"],
+      category: "mobile",
+      github: "https://github.com/Jorge221z/EmpleaWorks",
+      live: "https://emplea.works/download-app",
+      date: "2025",
+      duration: `2 ${dict.projectsPage?.months || "month"}`,
+      team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
       status: "completed",
-      features: [
-        "Task management",
-        "Team collaboration",
-        "Real-time updates",
-        "File sharing",
-        "Role-based access",
-        "Reporting dashboard",
-        "Time tracking",
-        "Calendar integration",
+      buttonType: "download", // Indicador para mostrar "Descargar APK"
+      features: dict.projectsPage?.features?.project3 || [
+        "Aplicación móvil nativa",
+        "Notificaciones push",
+        "Búsqueda de empleos offline",
+        "Interfaz intuitiva y moderna",
+        "Sincronización con la web",
+        "Gestión de perfil",
+        "Aplicación a ofertas",
+        "Historial de aplicaciones",
       ],
     },
     {
       id: 4,
-      title: "AI-Powered Analytics Dashboard",
-      description: "Advanced analytics platform with machine learning insights and predictive modeling capabilities.",
+      title: dict.projectsPage?.projectTitles?.project4 || dict.projects.project4?.title || "AI Chatbot REST API",
+      description: dict.projectsPage?.projectDescriptions?.project4 || dict.projects.project4?.description || "A modern project management dashboard built with Next.js and TypeScript.",
       longDescription:
-        "An enterprise-grade analytics dashboard that leverages artificial intelligence to provide deep insights into business data. The platform includes machine learning models for predictive analytics, automated report generation, and real-time data visualization. Built with modern technologies and designed for scalability.",
-      image: "/placeholder.svg?height=400&width=600",
+        dict.projectsPage?.projectLongDescriptions?.project4 ||
+        "A modern project management dashboard built with Next.js and TypeScript. Features include task management, team collaboration tools, real-time updates, file sharing, and comprehensive reporting. The application uses Prisma for database management and includes role-based access control.",
+      image: "/api.png",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        "/api.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["Python", "React", "TensorFlow", "PostgreSQL", "Docker", "AWS"],
-      category: "ai",
+      tech: ["React.js", "Laravel", "Mailgun", "TypeScript"],
+      category: "web",
       github: "#",
       live: "#",
-      date: "2024",
-      duration: "6 months",
-      team: "6 developers",
+      date: "2025",
+      duration: "...",
+      team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
       status: "in-progress",
-      features: [
-        "Machine learning models",
-        "Predictive analytics",
-        "Real-time visualization",
-        "Automated reporting",
-        "Data pipeline management",
-        "Custom dashboards",
-        "API integration",
-        "Cloud deployment",
+      features: dict.projectsPage?.features?.project4 || [
+        "Respuestas en lenguaje natural",
+        "Integración con aplicaciones web",
+        "Gestión de contexto conversacional",
+        "Escalabilidad para múltiples usuarios",
       ],
     },
     {
       id: 5,
-      title: "Blockchain Voting System",
-      description: "Secure and transparent voting platform built on blockchain technology for democratic processes.",
+      title: dict.projectsPage?.projectTitles?.project5 || "Dev-Horizon",
+      description: dict.projectsPage?.projectDescriptions?.project5 || "Secure and transparent voting platform built on blockchain technology for democratic processes.",
       longDescription:
+        dict.projectsPage?.projectLongDescriptions?.project5 ||
         "A revolutionary voting system that ensures transparency, security, and immutability through blockchain technology. The platform provides end-to-end encryption, voter anonymity, and real-time result tracking while maintaining the integrity of the democratic process.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/dev-horizon.jpg",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        "/dev-horizon.jpg",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["Solidity", "Web3.js", "React", "Ethereum", "IPFS", "MetaMask"],
+      tech: ["React Native", "Expo", "Axios", "Laravel Sanctum"],
       category: "blockchain",
-      github: "#",
-      live: "#",
-      date: "2024",
-      duration: "4 months",
-      team: "3 developers",
+      github: "https://github.com/Jorge221z/Dev-Horizon",
+      live: "https://github.com/Jorge221z/Dev-Horizon",
+      date: "2025",
+      duration: `2 ${dict.projectsPage?.months || "months"}`,
+      team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
       status: "completed",
-      features: [
+      buttonType: "repository", // Indicador para mostrar "Visitar Repositorio"
+      features: dict.projectsPage?.features?.project5 || [
         "Blockchain security",
         "Voter anonymity",
         "Real-time results",
@@ -186,25 +176,27 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
     },
     {
       id: 6,
-      title: "IoT Smart Home Hub",
-      description: "Centralized control system for smart home devices with voice control and automation features.",
+      title: dict.projectsPage?.projectTitles?.project6 || "Vinoteca",
+      description: dict.projectsPage?.projectDescriptions?.project6 || "Centralized control system for smart home devices with voice control and automation features.",
       longDescription:
+        dict.projectsPage?.projectLongDescriptions?.project6 ||
         "A comprehensive smart home management system that connects and controls various IoT devices. Features include voice control, automated routines, energy monitoring, security integration, and a user-friendly mobile app for remote management.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/vinoteca.png",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        "/vinoteca.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["Arduino", "Raspberry Pi", "React Native", "MQTT", "Node.js", "MongoDB"],
+      tech: ["Laravel", "Respository patron", "Tailwind CSS"],
       category: "iot",
-      github: "#",
-      live: "#",
-      date: "2023",
-      duration: "7 months",
-      team: "4 developers",
+      github: "https://github.com/Jorge221z/Vinoteca",
+      live: "https://github.com/Jorge221z/Vinoteca",
+      date: "2024",
+      duration: `2 ${dict.projectsPage?.months || "months"}`,
+      team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
       status: "completed",
-      features: [
+      buttonType: "repository", // Indicador para mostrar "Visitar Repositorio"
+      features: dict.projectsPage?.features?.project6 || [
         "Device integration",
         "Voice control",
         "Automated routines",
@@ -217,31 +209,12 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
     },
   ]
 
-  const categories = [
-    { id: "all", name: dict.projectsPage?.categories?.all || "All Projects" },
-    { id: "fullstack", name: dict.projectsPage?.categories?.fullstack || "Full Stack" },
-    { id: "mobile", name: dict.projectsPage?.categories?.mobile || "Mobile" },
-    { id: "web", name: dict.projectsPage?.categories?.web || "Web" },
-    { id: "ai", name: dict.projectsPage?.categories?.ai || "AI/ML" },
-    { id: "blockchain", name: dict.projectsPage?.categories?.blockchain || "Blockchain" },
-    { id: "iot", name: dict.projectsPage?.categories?.iot || "IoT" },
-  ]
-
-  const filteredProjects = projects.filter((project) => {
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.tech.some((tech) => tech.toLowerCase().includes(searchTerm.toLowerCase()))
-    const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
-    return matchesSearch && matchesCategory
-  })
-
   const getStatusColor = (status: string) => {
     switch (status) {
       case "completed":
         return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
       case "in-progress":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+        return "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300"
       default:
         return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
     }
@@ -263,7 +236,7 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
               </Link>
               <div className="h-6 w-px bg-slate-300 dark:bg-zinc-700"></div>
               <span className="text-xl font-medium text-slate-900 dark:text-white">
-                JM<span className="text-emerald-600 dark:text-emerald-400">.</span>
+                JMC<span className="text-emerald-600 dark:text-emerald-400">.</span>
               </span>
             </div>
 
@@ -290,53 +263,11 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
         </div>
       </section>
 
-      {/* Filters and Search */}
-      <section className="py-8 bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400 dark:text-zinc-500" />
-              <Input
-                placeholder={dict.projectsPage?.searchPlaceholder || "Search projects..."}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-slate-50 dark:bg-zinc-800 border-slate-200 dark:border-zinc-700"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <Button
-                  key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={
-                    selectedCategory === category.id
-                      ? "bg-emerald-600 hover:bg-emerald-700 text-white"
-                      : "border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
-                  }
-                >
-                  {category.name}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-4 text-sm text-slate-600 dark:text-zinc-400">
-            {dict.projectsPage?.showingResults || "Showing"} {filteredProjects.length} {dict.projectsPage?.of || "of"}{" "}
-            {projects.length} {dict.projectsPage?.projects || "projects"}
-          </div>
-        </div>
-      </section>
-
       {/* Projects Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <Card
                 key={project.id}
                 className="group overflow-hidden border border-slate-200 dark:border-zinc-700 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg bg-white dark:bg-zinc-800"
@@ -347,7 +278,7 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
                     alt={project.title}
                     width={600}
                     height={400}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`w-full h-full ${project.id === 4 ? 'object-cover object-center' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                   />
                   <div className="absolute top-4 right-4">
                     <Badge className={`${getStatusColor(project.status)} border-0`}>
@@ -367,12 +298,16 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
                     <div className="flex gap-2 ml-2">
                       <Link
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                       >
                         <Github className="h-4 w-4" />
                       </Link>
                       <Link
                         href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -384,18 +319,18 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
 
                 <CardContent className="space-y-4">
                   {/* Project Meta */}
-                  <div className="grid grid-cols-3 gap-4 text-xs text-slate-500 dark:text-zinc-500">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
-                      <span>{project.date}</span>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-500 dark:text-zinc-500 pr-2">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5 flex-shrink-0" />
+                      <span className="whitespace-nowrap">{project.date}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      <span>{project.duration}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5 flex-shrink-0" />
+                      <span className="whitespace-nowrap">{project.duration}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="h-3 w-3" />
-                      <span>{project.team}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Users className="h-3.5 w-3.5 flex-shrink-0" />
+                      <span className="whitespace-nowrap">{project.team}</span>
                     </div>
                   </div>
 
@@ -426,55 +361,59 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
                       {dict.projectsPage?.keyFeatures || "Key Features"}
                     </h4>
                     <ul className="text-xs text-slate-600 dark:text-zinc-400 space-y-1">
-                      {project.features.slice(0, 3).map((feature, index) => (
+                      {project.features.slice(0, 4).map((feature: string, index: number) => (
                         <li key={index} className="flex items-center gap-2">
                           <Star className="h-3 w-3 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
-                      {project.features.length > 3 && (
-                        <li className="text-emerald-600 dark:text-emerald-400 font-medium">
-                          +{project.features.length - 3} {dict.projectsPage?.moreFeatures || "more features"}
-                        </li>
-                      )}
                     </ul>
                   </div>
 
-                  {/* View Details Button */}
-                  <Button
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
-                    onClick={() => {
-                      // Here you could navigate to a detailed project page
-                      // For now, we'll just scroll to show more info
-                      alert(`${dict.projectsPage?.viewDetails || "View Details"}: ${project.title}`)
-                    }}
-                  >
-                    {dict.projectsPage?.viewDetails || "View Details"}
-                  </Button>
+                  {/* Spacer for better visual separation */}
+                  <div className="pt-4 border-t border-slate-100 dark:border-zinc-700 mt-4">
+                    {/* Action Button */}
+                    <Button
+                      asChild
+                      className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                      disabled={project.live === "#"}
+                    >
+                      {project.live !== "#" ? (
+                        <Link
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.buttonType === "download" ? (
+                            <>
+                              <Download className="mr-2 h-4 w-4" />
+                              {dict.projectsPage?.downloadApp || "Download APK"}
+                            </>
+                          ) : project.buttonType === "repository" ? (
+                            <>
+                              <Github className="mr-2 h-4 w-4" />
+                              {dict.projectsPage?.visitRepository || "Visit Repository"}
+                            </>
+                          ) : (
+                            <>
+                              <ExternalLink className="mr-2 h-4 w-4" />
+                              {dict.projectsPage?.visitWebsite || "Visit Website"}
+                            </>
+                          )}
+                        </Link>
+                      ) : (
+                        <span className="cursor-not-allowed opacity-50">
+                          {dict.projectsPage?.visitWebsite || "Visit Website"}
+                        </span>
+                      )}
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
-              <div className="text-slate-400 dark:text-zinc-500 mb-4">
-                <Filter className="h-16 w-16 mx-auto mb-4" />
-                <h3 className="text-xl font-medium mb-2">{dict.projectsPage?.noResults || "No projects found"}</h3>
-                <p>{dict.projectsPage?.noResultsDescription || "Try adjusting your search or filter criteria"}</p>
-              </div>
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setSearchTerm("")
-                  setSelectedCategory("all")
-                }}
-                className="border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
-              >
-                {dict.projectsPage?.clearFilters || "Clear Filters"}
-              </Button>
-            </div>
-          )}
+
         </div>
       </section>
 

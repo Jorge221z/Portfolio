@@ -50,8 +50,10 @@ export default function Portfolio() {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
     if (section) {
+      // Ajustar offset especial para la sección de proyectos
+      const offset = sectionId === "projects" ? 40 : 80
       window.scrollTo({
-        top: section.offsetTop - 80,
+        top: section.offsetTop - offset,
         behavior: "smooth",
       })
     }

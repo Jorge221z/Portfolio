@@ -57,8 +57,10 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
     if (section) {
+      // Ajustar offset especial para la sección de proyectos
+      const offset = sectionId === "projects" ? 10 : 80
       window.scrollTo({
-        top: section.offsetTop - 80,
+        top: section.offsetTop - offset,
         behavior: "smooth",
       })
     }
@@ -76,26 +78,26 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
     {
       title: dict.projects.project1.title,
       description: dict.projects.project1.description,
-      image: "/placeholder.svg?height=300&width=500",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "#",
-      live: "#",
+      image: lang === "en" ? "/s2me-ingles.png" : "/s2me-español.png",
+      tech: ["React.js", "Laravel", "Google Gemini API", "MySQL"],
+      github: "https://github.com/Jorge221z/Script2me",
+      live: "https://script2.me",
     },
     {
       title: dict.projects.project2.title,
       description: dict.projects.project2.description,
-      image: "/placeholder.svg?height=300&width=500",
-      tech: ["React Native", "Firebase", "Redux"],
-      github: "#",
-      live: "#",
+      image: lang === "en" ? "/ew-ingles.png" : "/ew-español.png",
+      tech: ["React.js", "Laravel", "Mailgun", "TypeScript"],
+      github: "https://github.com/Jorge221z/EmpleaWorks",
+      live: "https://emplea.works/",
     },
     {
       title: dict.projects.project3.title,
       description: dict.projects.project3.description,
-      image: "/placeholder.svg?height=300&width=500",
-      tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-      github: "#",
-      live: "#",
+      image: "/collage.jpg",
+      tech: ["React Native", "Expo", "GoogleCloud", "TypeScript"],
+      github: "https://github.com/Jorge221z/EmpleaWorks",
+      live: "https://emplea.works/",
     },
   ]
 
@@ -271,6 +273,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 <Link
                   href="https://github.com/Jorge221z"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <Github className="h-5 w-5" />
@@ -279,6 +282,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 <Link
                   href="https://www.linkedin.com/in/jorge-muñoz-castillo"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
@@ -287,6 +291,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 <Link
                   href="mailto:jorgemunozcast12@gmail.com"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <Mail className="h-5 w-5" />
@@ -392,7 +397,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 {dict.projects.title}
               </h2>
             </div>
-            <p className="text-slate-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md">{dict.projects.description}</p>
+            <p className="text-slate-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md whitespace-pre-line">{dict.projects.description}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -407,7 +412,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                     alt={project.title}
                     width={500}
                     height={300}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`w-full h-full ${index === 1 ? 'object-cover' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -432,6 +437,8 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   <div className="flex gap-4">
                     <Link
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                     >
                       <Github className="h-5 w-5" />
@@ -439,6 +446,8 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                     </Link>
                     <Link
                       href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                     >
                       <ExternalLink className="h-5 w-5" />
@@ -453,8 +462,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
           <div className="mt-12 text-center">
             <Button
               asChild
-              variant="outline"
-              className="border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white rounded-md px-6 py-2.5"
+              className="relative overflow-hidden bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:via-emerald-500 hover:to-teal-500 text-white shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-110 transition-all duration-500 rounded-xl px-10 py-4 text-lg font-bold group border-2 border-emerald-400/30 hover:border-emerald-300/50"
             >
               <Link
                 href={`/${lang}/projects`}
@@ -462,11 +470,24 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   // Smooth scroll to top before navigation
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }}
+                className="flex items-center relative z-10"
               >
-                {dict.projects.viewAll}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <span className="mr-3 tracking-wide">{dict.projects.viewAll}</span>
+                <ArrowRight className="h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500" />
+                
+                {/* Animated shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out -z-10"></div>
+                
+                {/* Glowing overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-teal-400/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
+                
+                {/* Pulse effect */}
+                <div className="absolute inset-0 rounded-xl bg-emerald-400/20 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-20"></div>
               </Link>
             </Button>
+            
+            {/* Additional glow effect around button */}
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500 -z-30 transform scale-110"></div>
           </div>
         </div>
       </section>
@@ -748,6 +769,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <Link
                 href="https://github.com/Jorge221z"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-white dark:bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors border border-zinc-200 dark:border-zinc-600 hover:border-emerald-500/50"
               >
                 <Github className="w-6 h-6" />
@@ -756,6 +778,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <Link
                 href="https://www.linkedin.com/in/jorge-muñoz-castillo"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-white dark:bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors border border-zinc-200 dark:border-zinc-600 hover:border-emerald-500/50"
               >
                 <Linkedin className="w-6 h-6" />
@@ -764,6 +787,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <Link
                 href="mailto:jorgemunozcast12@gmail.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-white dark:bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors border border-zinc-200 dark:border-zinc-600 hover:border-emerald-500/50"
               >
                 <Mail className="w-6 h-6" />
@@ -792,6 +816,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <Link
                 href="https://github.com/Jorge221z"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               >
                 <Github className="h-5 w-5" />
@@ -800,6 +825,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <Link
                 href="https://www.linkedin.com/in/jorge-muñoz-castillo"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
@@ -808,6 +834,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               <Link
                 href="mailto:jorgemunozcast12@gmail.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               >
                 <Mail className="h-5 w-5" />

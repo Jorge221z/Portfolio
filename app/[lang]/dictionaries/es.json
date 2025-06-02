@@ -23,19 +23,23 @@
   "projects": {
     "badge": "Portafolio",
     "title": "Proyectos Destacados",
-    "description": "Una selección de mi trabajo reciente. Cada proyecto representa un desafío único y una solución.",
+    "description": "Una selección de mis últimos trabajos.\nCada proyecto representa un desafío único y una solución.",
     "viewAll": "Ver Todos los Proyectos",
     "project1": {
-      "title": "Plataforma E-Commerce",
-      "description": "Solución e-commerce completa con React, Node.js e integración con Stripe"
+      "title": "Script2me",
+      "description": "Solución a las limitaciones de los chatbots de IA, como la restricción en la cantidad de archivos adjuntos, con una plataforma que acelera el desarrollo de cualquier tipo de aplicación web o móvil usando IA."
     },
     "project2": {
-      "title": "App Móvil de Fitness",
-      "description": "Aplicación multiplataforma de seguimiento fitness con sincronización en tiempo real"
+      "title": "EmpleaWorks",
+      "description": "Web para buscar empleo y publicar ofertas de trabajo, con un sistema de gestión de usuarios y autenticación segura. Enfocado en la zona de Murcia, España."
     },
     "project3": {
-      "title": "Dashboard de Gestión de Tareas",
-      "description": "Dashboard moderno para gestión de proyectos con funciones de colaboración en equipo"
+      "title": "EmpleaWorks - Aplicación Móvil",
+      "description": "Aplicacion móvil derivada de la web de EmpleaWorks, permite a los usuarios buscar empleo desde sus dispositivos móviles. Incluye notificaciones en tiempo real y una interfaz intuitiva."
+    },
+    "project4": {
+      "title": "API Rest de chatbot de IA",
+      "description": "API Rest de chatbot de IA que utiliza la API de Google Gemini para simular el comportamiento de un LLM, dando muchas posibilidades a los usuarios."
     }
   },
   "projectsPage": {
@@ -60,12 +64,83 @@
     "keyFeatures": "Características Clave",
     "moreFeatures": "más características",
     "viewDetails": "Ver Detalles",
+    "visitWebsite": "Ir a la Web",
+    "downloadApp": "Descargar APK",
+    "visitRepository": "Ver Repositorio",
     "noResults": "No se encontraron proyectos",
     "noResultsDescription": "Intenta ajustar tu búsqueda o criterios de filtro",
     "clearFilters": "Limpiar Filtros",
-    "ctaTitle": "¿Interesado en trabajar juntos?",
-    "ctaDescription": "Hablemos sobre tu próximo proyecto y hagamos realidad tus ideas.",
+    "ctaTitle": "¿Interesado en conocer más sobre mí?",
+    "ctaDescription": "Envíame un correo o contactame por LinkedIn.",
     "getInTouch": "Ponte en Contacto",
+    "individualProject": "Proyecto Individual",
+    "developers": "desarrolladores",
+    "months": "meses",
+    "duration": "Duración",
+    "team": "Equipo",
+    "date": "Fecha",
+    "status": "Estado",
+    "features": {
+      "project1": [
+        "Uso de la API de Google Gemini",
+        "Función para generar prompts optimizados",
+        "Refactorización de código en tiempo real",
+        "Escáner de vulnerabilidades en el código"
+      ],
+      "project2": [
+        "Permite a candidatos crear su perfil y aplicar a ofertas",
+        "Las empresas pueden publicar sus ofertas de trabajo",
+        "Verificación de email y autenticación con Google",
+        "Componentes modulares y reutilizables"
+      ],
+      "project3": [
+        "Aplicación móvil nativa",
+        "Notificaciones push",
+        "Conexion con la API de EmpleaWorks",
+        "Interfaz intuitiva y moderna"
+      ],
+      "project4": [
+  "Respuestas en lenguaje natural.",
+  "Fácil integración con apps web y móviles.",
+  "Gestión de contexto en conversaciones.",
+  "Escalable para múltiples usuarios."
+],
+
+      "project5": [
+        "Autenticacion con Laravel Sanctum",
+        "Paginacion de respuestas de la API",
+        "Uso de axios para llamadas a la API",
+        "Interfaz de usuario moderna y responsiva"
+      ],
+      "project6": [
+        "Gestión de inventario de vinos",
+        "Análisis de ventas",
+        "Gestión de proveedores",
+        "Alertas de reposición"
+      ]
+    },
+    "projectTitles": {
+
+      "project4": "API Rest de chatbot de IA",
+      "project5": "Dev-Horizon",
+      "project6": "Vinoteca"
+    },
+    "projectDescriptions": {
+      "project3": "Aplicacion móvil derivada de la web de EmpleaWorks, permite a los usuarios buscar empleo desde sus dispositivos móviles. Incluye notificaciones en tiempo real y una interfaz intuitiva.",
+      "project4": "API Rest de chatbot de IA  que utiliza la API de Google Gemini para simular el comportamiento de un LLM entrenado, ofreciendo múltiples posibilidades a los usuarios.",
+      "project5": "Aplicación movil que cuenta con autenticación por tokens y se conecta a una API Rest desarollada con Laravel para servir los datos.",
+      "project6": "Vinoteca con CRUD de vinos, gestion por categorias y carrito de compras. Incluye un sistema de autenticación y gestión de usuarios."
+    },
+    "projectLongDescriptions": {
+      "project3": "Un dashboard de análisis de nivel empresarial que aprovecha la inteligencia artificial para proporcionar insights profundos sobre datos empresariales. La plataforma incluye modelos de machine learning para análisis predictivo, generación automatizada de reportes y visualización de datos en tiempo real. Construido con tecnologías modernas y diseñado para escalabilidad.",
+      "project4": "Un dashboard moderno de gestión de proyectos construido con Next.js y TypeScript. Las características incluyen gestión de tareas, herramientas de colaboración en equipo, actualizaciones en tiempo real, compartir archivos y reportes comprehensivos. La aplicación usa Prisma para gestión de base de datos e incluye control de acceso basado en roles.",
+      "project5": "Una plataforma colaborativa de desarrollo diseñada para equipos de programadores. Incluye herramientas de gestión de proyectos, control de versiones integrado, seguimiento de issues, planificación de sprints y métricas de rendimiento del equipo. Construida con tecnologías modernas para facilitar la colaboración efectiva.",
+      "project6": "Un sistema integral de gestión de inventario específicamente diseñado para vinotecas y bodegas. Incluye seguimiento de stock, análisis de ventas, gestión de proveedores, alertas de reposición y reportes detallados. La aplicación está optimizada para el manejo de productos con características específicas como añada, región y variedad."
+    },
+    "teamInfo": {
+      "individualProject": "Proyecto Individual",
+      "developers": "desarrolladores"
+    },
     "project1": {
       "longDescription": "Esta plataforma de e-commerce integral fue construida desde cero usando tecnologías web modernas. Incluye un sistema completo de carrito de compras, procesamiento seguro de pagos a través de Stripe, autenticación de usuarios, gestión de pedidos y un panel de administración para control de inventario. La plataforma es completamente responsiva y optimizada para rendimiento."
     },
