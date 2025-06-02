@@ -3,6 +3,7 @@
     "home": "Home",
     "projects": "Projects",
     "about": "About",
+    "education": "Education",
     "skills": "Skills",
     "experience": "Experience",
     "contact": "Contact"
@@ -169,6 +170,22 @@
     "backend": "Backend",
     "mobile": "Mobile",
     "tools": "Tools"
+  },
+  "education": {
+    "badge": "Education",
+    "title": "Academic Background",
+    "degree1": {
+      "title": "Advanced vocational training in computer programming",
+      "institution": "José Luis Castillo Puche technical school",
+      "period": "2023 - 2025",
+      "description": "Comprehensive program covering modern web development technologies, database management, and software engineering principles."
+    },
+    "degree2": {
+      "title": "Meta Data Analytics Course issued by Meta",
+      "institution": "Meta",
+      "period": "Completed September 2024",
+      "description": "Professional certification in data analysis, statistical methods, and data visualization using industry-standard tools and methodologies."
+    }
   },
   "experience": {
     "badge": "Work History",

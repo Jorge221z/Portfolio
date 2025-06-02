@@ -110,6 +110,21 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
     },
   ]
 
+  const education = [
+    {
+      degree: dict.education.degree1.title,
+      institution: dict.education.degree1.institution,
+      period: dict.education.degree1.period,
+      description: dict.education.degree1.description,
+    },
+    {
+      degree: dict.education.degree2.title,
+      institution: dict.education.degree2.institution,
+      period: dict.education.degree2.period,
+      description: dict.education.degree2.description,
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300">
       {/* Navigation */}
@@ -124,7 +139,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              {["home", "projects", "experience", "about", "skills", "contact"].map((section) => (
+              {["home", "projects", "experience", "about", "education", "skills", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -163,7 +178,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
         {menuOpen && (
           <div className="md:hidden bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["home", "projects", "experience", "about", "skills", "contact"].map((section) => (
+              {["home", "projects", "experience", "about", "education", "skills", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -182,7 +197,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center pt-16" ref={(el) => (sectionsRef.current.home = el)}>
+      <section id="home" className="min-h-screen flex items-center pt-16" ref={(el) => { sectionsRef.current.home = el }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div
@@ -385,7 +400,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       <section
         id="projects"
         className="py-8 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
-        ref={(el) => (sectionsRef.current.projects = el)}
+        ref={(el) => { sectionsRef.current.projects = el }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
@@ -496,7 +511,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       <section
         id="experience"
         className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
-        ref={(el) => (sectionsRef.current.experience = el)}
+        ref={(el) => { sectionsRef.current.experience = el }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -536,7 +551,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       <section
         id="about"
         className="py-8 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
-        ref={(el) => (sectionsRef.current.about = el)}
+        ref={(el) => { sectionsRef.current.about = el }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -624,11 +639,49 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section
+        id="education"
+        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
+        ref={(el) => { sectionsRef.current.education = el }}
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wider uppercase">
+              {dict.education.badge}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">{dict.education.title}</h2>
+          </div>
+
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div
+                key={index}
+                className="bg-slate-50 dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{edu.degree}</h3>
+                    <p className="text-emerald-600 dark:text-emerald-400 font-medium">{edu.institution}</p>
+                  </div>
+                  <div className="mt-2 md:mt-0 md:ml-4">
+                    <span className="inline-block bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 text-sm px-3 py-1 rounded-full">
+                      {edu.period}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-slate-600 dark:text-zinc-400">{edu.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section
         id="skills"
-        className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300"
-        ref={(el) => (sectionsRef.current.skills = el)}
+        className="py-24 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
+        ref={(el) => { sectionsRef.current.skills = el }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -725,8 +778,8 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-8 bg-slate-100 dark:bg-zinc-900 transition-colors duration-300"
-        ref={(el) => (sectionsRef.current.contact = el)}
+        className="py-8 bg-white dark:bg-zinc-950 transition-colors duration-300"
+        ref={(el) => { sectionsRef.current.contact = el }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

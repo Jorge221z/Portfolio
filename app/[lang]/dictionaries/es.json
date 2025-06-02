@@ -3,6 +3,7 @@
     "home": "Inicio",
     "projects": "Proyectos",
     "about": "Acerca de",
+    "education": "Educación",
     "skills": "Habilidades",
     "experience": "Experiencia",
     "contact": "Contacto"
@@ -170,6 +171,22 @@
     "backend": "Backend",
     "mobile": "Móvil",
     "tools": "Herramientas"
+  },
+  "education": {
+    "badge": "Educación",
+    "title": "Formación Académica",
+    "degree1": {
+      "title": "Grado Superior de Desarrollo de Aplicaciones Web",
+      "institution": "IES Jose Luis Castillo Puche",
+      "period": "2023 - 2025",
+      "description": "Programa integral que cubre tecnologías modernas de desarrollo web, gestión de bases de datos y principios de ingeniería de software."
+    },
+    "degree2": {
+      "title": "Meta Data Analytics Course emitido por Meta",
+      "institution": "Meta",
+      "period": "Finalizado en Septiembre 2024",
+      "description": "Certificación profesional en análisis de datos, métodos estadísticos y visualización de datos utilizando herramientas y metodologías estándar de la industria."
+    }
   },
   "experience": {
     "badge": "Historial Laboral",
