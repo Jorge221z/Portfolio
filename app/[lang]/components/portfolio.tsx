@@ -126,7 +126,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300 overflow-x-hidden">
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-50/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -320,7 +320,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <div className="relative max-w-lg mx-auto">
+              <div className="relative max-w-lg mx-auto overflow-hidden">
                 {/* Main container with floating cards */}
                 <div className="relative h-96 w-full">
                   
@@ -498,11 +498,11 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 
                 {/* Pulse effect */}
                 <div className="absolute inset-0 rounded-xl bg-emerald-400/20 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-20"></div>
+                
+                {/* Additional glow effect around button */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-sm opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-30"></div>
               </Link>
             </Button>
-            
-            {/* Additional glow effect around button */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500 -z-30 transform scale-110"></div>
           </div>
         </div>
       </section>
