@@ -96,8 +96,8 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       description: dict.projects.project3.description,
       image: "/collage.jpg",
       tech: ["React Native", "Expo", "GoogleCloud", "TypeScript"],
-      github: "https://github.com/Jorge221z/EmpleaWorks",
-      live: "https://emplea.works/",
+      github: "https://github.com/Jorge221z/EmpleaWorks-Mobile",
+      live: "https://emplea.works/download-app",
     },
   ]
 

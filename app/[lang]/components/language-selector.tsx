@@ -33,7 +33,7 @@ export function LanguageSelector({ currentLang, dict }: LanguageSelectorProps) {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white min-w-[100px] justify-between"
+          className="gap-2 bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white min-w-[100px] justify-between language-selector"
         >
           <span className="font-bold">{currentLanguage?.name}</span>
           <ChevronDown className="h-3 w-3 opacity-50" />

@@ -116,7 +116,7 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
       ],
       tech: ["React Native", "Expo", "GoogleCloud", "TypeScript"],
       category: "mobile",
-      github: "https://github.com/Jorge221z/EmpleaWorks",
+      github: "https://github.com/Jorge221z/EmpleaWorks-Mobile",
       live: "https://emplea.works/download-app",
       date: "2025",
       duration: `2 ${dict.projectsPage?.months || "month"}`,
@@ -250,13 +250,13 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
             <div className="flex items-center gap-4">
               <Link
                 href={`/${lang}`}
-                className="flex items-center gap-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 bg-white dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300 hover:scale-105 px-3 py-2 rounded-md"
               >
                 <ArrowLeft className="h-5 w-5 transition-transform duration-300 hover:-translate-x-1" />
                 <span className="text-sm font-medium">{dict.projectsPage?.backToHome || "Back to Home"}</span>
               </Link>
-              <div className="h-6 w-px bg-slate-300 dark:bg-zinc-700"></div>
-              <span className="text-xl font-medium text-slate-900 dark:text-white">
+              <div className="hidden sm:block h-6 w-px bg-slate-300 dark:bg-zinc-700"></div>
+              <span className="hidden sm:block text-xl font-medium text-slate-900 dark:text-white">
                 JMC<span className="text-emerald-600 dark:text-emerald-400">.</span>
               </span>
             </div>
@@ -313,7 +313,7 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
 
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <CardTitle className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                       {project.title}
                     </CardTitle>
                     <div className="flex gap-2 ml-2">
@@ -454,7 +454,7 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
             <Button
               variant="outline"
               asChild
-              className="border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
+              className="bg-white dark:bg-zinc-800 border-slate-300 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
             >
               <Link href={`/${lang}`}>{dict.projectsPage?.backToHome || "Back to Home"}</Link>
             </Button>

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { PageTransition } from "./components/page-transition"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -29,11 +30,11 @@ export default async function RootLayout({
       <head>
         <meta name="view-transition" content="same-origin" />
       </head>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div id="page-transition-container" className="min-h-screen">
+      <body className={`${inter.className} bg-slate-50 dark:bg-zinc-950`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+          <PageTransition>
             {children}
-          </div>
+          </PageTransition>
         </ThemeProvider>
       </body>
     </html>

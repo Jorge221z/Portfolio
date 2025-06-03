@@ -130,7 +130,7 @@
       "project3": "Aplicacion móvil derivada de la web de EmpleaWorks, permite a los usuarios buscar empleo desde sus dispositivos móviles. Incluye notificaciones en tiempo real y una interfaz intuitiva.",
       "project4": "API Rest de chatbot de IA  que utiliza la API de Google Gemini para simular el comportamiento de un LLM entrenado, ofreciendo múltiples posibilidades a los usuarios.",
       "project5": "Aplicación movil que cuenta con autenticación por tokens y se conecta a una API Rest desarollada con Laravel para servir los datos.",
-      "project6": "Vinoteca con CRUD de vinos, gestion por categorias y carrito de compras. Incluye un sistema de autenticación y gestión de usuarios."
+      "project6": " con CRUD de vinos, gestion por categorias y carrito de compras. Incluye un sistema de autenticación y gestión de usuarios."
     },
     "projectLongDescriptions": {
       "project3": "Un dashboard de análisis de nivel empresarial que aprovecha la inteligencia artificial para proporcionar insights profundos sobre datos empresariales. La plataforma incluye modelos de machine learning para análisis predictivo, generación automatizada de reportes y visualización de datos en tiempo real. Construido con tecnologías modernas y diseñado para escalabilidad.",
