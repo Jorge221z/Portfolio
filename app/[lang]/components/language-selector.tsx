@@ -21,8 +21,8 @@ export function LanguageSelector({ currentLang, dict }: LanguageSelectorProps) {
   }
 
   const languages = {
-    en: { flag: "🇬🇧", name: dict.language.english },
-    es: { flag: "🇪🇸", name: dict.language.spanish }
+    en: { name: currentLang === "es" ? "English" : dict.language.english },
+    es: { name: dict.language.spanish }
   }
 
   const currentLanguage = languages[currentLang as keyof typeof languages]
@@ -44,20 +44,14 @@ export function LanguageSelector({ currentLang, dict }: LanguageSelectorProps) {
           onClick={() => switchLanguage("en")}
           className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white cursor-pointer flex items-center justify-between"
         >
-          <div className="flex items-center gap-2">
-            <span className="text-base">🇬🇧</span>
-            <span className="font-bold">{dict.language.english}</span>
-          </div>
+          <span className="font-bold">{currentLang === "es" ? "English" : dict.language.english}</span>
           {currentLang === "en" && <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => switchLanguage("es")}
           className="text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-zinc-700 focus:text-zinc-900 dark:focus:text-white cursor-pointer flex items-center justify-between"
         >
-          <div className="flex items-center gap-2">
-            <span className="text-base">🇪🇸</span>
-            <span className="font-bold">{dict.language.spanish}</span>
-          </div>
+          <span className="font-bold">{dict.language.spanish}</span>
           {currentLang === "es" && <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />}
         </DropdownMenuItem>
       </DropdownMenuContent>

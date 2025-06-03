@@ -138,7 +138,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden lg:flex space-x-8">
               {["home", "projects", "experience", "about", "education", "skills", "contact"].map((section) => (
                 <button
                   key={section}
@@ -155,15 +155,37 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             </nav>
 
             {/* Desktop Controls */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-4">
               <LanguageSelector currentLang={lang} dict={dict} />
               <ThemeToggle />
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center space-x-2">
+            {/* Tablet Controls - Theme and Language only */}
+            <div className="hidden md:flex lg:hidden items-center space-x-4">
               <LanguageSelector currentLang={lang} dict={dict} />
               <ThemeToggle />
+            </div>
+
+            {/* Mobile Controls - Centered layout */}
+            <div className="md:hidden flex items-center justify-center flex-1">
+              <div className="flex items-center space-x-3">
+                <LanguageSelector currentLang={lang} dict={dict} />
+                <ThemeToggle />
+              </div>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white focus:outline-none"
+              >
+                {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+
+            {/* Tablet Menu Button */}
+            <div className="hidden md:flex lg:hidden items-center">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white focus:outline-none"
@@ -176,7 +198,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
         {/* Mobile Navigation */}
         {menuOpen && (
-          <div className="md:hidden bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+          <div className="lg:hidden bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {["home", "projects", "experience", "about", "education", "skills", "contact"].map((section) => (
                 <button
@@ -206,19 +228,20 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
               }`}
             >
               <div className="inline-block mb-4">
-                <span className="relative text-emerald-700 dark:text-emerald-300 text-sm font-semibold tracking-wider uppercase 
+                <span className="relative text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-semibold tracking-wider uppercase 
                                 bg-gradient-to-r from-emerald-50 via-emerald-100 to-emerald-50 
                                 dark:bg-gradient-to-r dark:from-emerald-950/80 dark:via-emerald-900/60 dark:to-emerald-950/80
                                 border border-emerald-200/60 dark:border-emerald-400/30 
                                 shadow-lg shadow-emerald-100/50 dark:shadow-emerald-900/30
-                                backdrop-blur-sm rounded-full px-4 py-2 
+                                backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 
                                 transition-all duration-300 ease-in-out 
                                 hover:shadow-xl hover:shadow-emerald-200/60 dark:hover:shadow-emerald-800/40
                                 hover:scale-105 hover:border-emerald-300/80 dark:hover:border-emerald-400/50
                                 before:absolute before:inset-0 before:rounded-full 
                                 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
                                 dark:before:via-white/10 before:opacity-0 hover:before:opacity-100 
-                                before:transition-opacity before:duration-300">
+                                before:transition-opacity before:duration-300
+                                text-center break-words whitespace-normal leading-tight">
                   {dict.hero.badge}
                 </span>
               </div>
@@ -799,7 +822,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 </div>
                 <div>
                   <p className="text-sm text-slate-600 dark:text-zinc-400">{dict.contact.email}</p>
-                  <p className="text-slate-900 dark:text-zinc-200 font-medium">jorgemunozcast12@gmail.com</p>
+                  <p className="text-sm sm:text-base text-slate-900 dark:text-zinc-200 font-medium break-all">jorgemunozcast12@gmail.com</p>
                 </div>
               </div>
 
