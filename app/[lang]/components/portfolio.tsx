@@ -546,14 +546,25 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             {experience.map((exp, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
+                className="relative bg-white dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
+                {/* Logo en la esquina superior derecha */}
+                <div className="absolute top-4 right-4">
+                  <Image
+                    src="/skillsdivers.svg"
+                    alt="Skills Divers Logo"
+                    width={56}
+                    height={56}
+                    className="w-14 h-14 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+                
+                <div className="flex flex-col md:flex-row md:items-start mb-4 pr-20">
+                  <div className="flex-1">
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h3>
                     <p className="text-emerald-600 dark:text-emerald-400">{exp.company}</p>
                   </div>
-                  <div className="mt-2 md:mt-0">
+                  <div className="mt-3 md:mt-0 md:ml-4">
                     <span className="inline-block bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm px-3 py-1 rounded-full">
                       {exp.period}
                     </span>
