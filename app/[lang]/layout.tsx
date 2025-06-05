@@ -13,7 +13,12 @@ export async function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: "Jorge Muñoz Castillo | Full Stack Developer",
-  description: "Portfolio showcasing modern web development projects and skills",
+  description: "Portafolio con proyectos modernos de desarrollo web y mis habilidades.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 }
 
 export default async function RootLayout({
@@ -29,6 +34,7 @@ export default async function RootLayout({
     <html lang={lang} suppressHydrationWarning>
       <head>
         <meta name="view-transition" content="same-origin" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${inter.className} bg-slate-50 dark:bg-zinc-950`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>

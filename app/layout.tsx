@@ -2,9 +2,14 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Jorge Muñoz Castillo | Full Stack Developer',
+  description: 'Portafolio con proyectos modernos de desarrollo web y mis habilidades.',
+  generator: 'Next.js',
+  applicationName: 'Jorge Muñoz Castillo',
+  keywords: ['Jorge Muñoz Castillo', 'Full Stack Developer', 'Portafolio', 'Desarrollo Web', 'Jorge Muñoz'],
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
