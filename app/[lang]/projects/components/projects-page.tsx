@@ -149,7 +149,7 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
       ],
       tech: ["Laravel", "React", "Docker", "Llama 3.3", "AI"],
       category: "web",
-      github: "#",
+      github: "https://github.com/Jorge221z/skillpilot",
       live: "https://skillpilot.es",
       date: "2025",
       duration: `2 ${dict.projectsPage?.months || "months"}`,

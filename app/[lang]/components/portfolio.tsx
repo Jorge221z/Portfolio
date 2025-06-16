@@ -92,12 +92,12 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
       live: "https://emplea.works/",
     },
     {
-      title: dict.projects.project3.title,
-      description: dict.projects.project3.description,
-      image: "/collage.jpg",
-      tech: ["React Native", "Expo", "GoogleCloud", "TypeScript"],
-      github: "https://github.com/Jorge221z/EmpleaWorks-Mobile",
-      live: "https://emplea.works/download-app",
+      title: dict.projects.project4.title,
+      description: dict.projects.project4.description,
+      image: "/skillpilot.png",
+      tech: ["Laravel", "React", "Docker", "Llama 3.3", "AI"],
+      github: "https://github.com/Jorge221z/skillpilot",
+      live: "https://skillpilot.es",
     },
   ]
 
