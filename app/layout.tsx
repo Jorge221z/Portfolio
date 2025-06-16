@@ -3,13 +3,21 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Jorge Muñoz Castillo | Full Stack Developer',
-  description: 'Portafolio con proyectos modernos de desarrollo web y mis habilidades.',
+  description: 'Desarrollador Full Stack especializado en React, Next.js, Node.js y tecnologías modernas. Explora mi portafolio con proyectos innovadores y soluciones web.',
   generator: 'Next.js',
-  applicationName: 'Jorge Muñoz Castillo',
-  keywords: ['Jorge Muñoz Castillo', 'Full Stack Developer', 'Portafolio', 'Desarrollo Web', 'Jorge Muñoz'],
+  applicationName: 'Jorge Muñoz Castillo Portfolio',
+  keywords: ['Jorge Muñoz Castillo', 'Full Stack Developer', 'React', 'Next.js', 'Node.js', 'TypeScript', 'Desarrollo Web', 'Portafolio'],
+  authors: [{ name: 'Jorge Muñoz Castillo' }],
+  creator: 'Jorge Muñoz Castillo',
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
+  manifest: '/manifest.json',
 }
 
 export default function RootLayout({

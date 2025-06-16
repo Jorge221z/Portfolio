@@ -1,0 +1,24 @@
+{
+  "name": "Jorge Muñoz Castillo - Full Stack Developer",
+  "short_name": "Jorge Portfolio",
+  "description": "Portafolio profesional de Jorge Muñoz Castillo, Full Stack Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "lang": "es",
+  "categories": ["portfolio", "developer", "technology"]
+}

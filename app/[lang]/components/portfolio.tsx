@@ -143,10 +143,10 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-sm font-medium transition-colors bg-slate-50/80 dark:bg-zinc-950/80 hover:bg-slate-50/80 dark:hover:bg-zinc-950/80 ${
                     activeSection === section
                       ? "text-emerald-600 dark:text-emerald-400"
-                      : "text-slate-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                      : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   {dict.nav[section]}
@@ -178,7 +178,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white focus:outline-none"
+                className="text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white focus:outline-none"
               >
                 {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -188,7 +188,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             <div className="hidden md:flex lg:hidden items-center">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white focus:outline-none"
+                className="text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white focus:outline-none"
               >
                 {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -198,16 +198,16 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
         {/* Mobile Navigation */}
         {menuOpen && (
-          <div className="lg:hidden bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+          <div className="lg:hidden bg-slate-50/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {["home", "projects", "experience", "about", "education", "skills", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
+                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
                     activeSection === section
                       ? "bg-emerald-100 dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400"
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white"
+                      : "text-slate-600 dark:text-zinc-400 hover:bg-slate-100/50 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   {dict.nav[section]}
