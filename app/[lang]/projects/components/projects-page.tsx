@@ -141,20 +141,20 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
       longDescription:
         dict.projectsPage?.projectLongDescriptions?.project4 ||
         "A modern project management dashboard built with Next.js and TypeScript. Features include task management, team collaboration tools, real-time updates, file sharing, and comprehensive reporting. The application uses Prisma for database management and includes role-based access control.",
-      image: "/api.png",
+      image: "/skillpilot.png",
       images: [
-        "/api.png",
+        "/skillpilot.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
-      tech: ["React.js", "Laravel", "Mailgun", "TypeScript"],
+      tech: ["Laravel", "React", "Docker", "Llama 3.3", "AI"],
       category: "web",
       github: "#",
-      live: "#",
+      live: "https://skillpilot.es",
       date: "2025",
-      duration: "...",
+      duration: `2 ${dict.projectsPage?.months || "months"}`,
       team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
-      status: "in-progress",
+      status: "completed",
       features: dict.projectsPage?.features?.project4 || [
         "Respuestas en lenguaje natural",
         "Integración con aplicaciones web",

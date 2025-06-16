@@ -39,8 +39,8 @@
       "description": "Aplicacion móvil derivada de la web de EmpleaWorks, permite a los usuarios buscar empleo desde sus dispositivos móviles. Incluye notificaciones en tiempo real y una interfaz intuitiva."
     },
     "project4": {
-      "title": "API Rest de chatbot de IA",
-      "description": "API Rest de chatbot de IA que utiliza la API de Google Gemini para simular el comportamiento de un LLM, dando muchas posibilidades a los usuarios."
+      "title": "SkillPilot",
+      "description": "Herramienta que automatiza la búsqueda de ofertas laborales en múltiples portales y optimiza candidaturas mediante IA. Desarrollado con Laravel, React, Docker y agente de IA personalizado basado en Llama 3.3."
     }
   },
   "projectsPage": {
@@ -101,11 +101,9 @@
         "Interfaz intuitiva y moderna"
       ],
       "project4": [
-  "Respuestas en lenguaje natural.",
-  "Fácil integración con apps web y móviles.",
-  "Gestión de contexto en conversaciones.",
-  "Escalable para múltiples usuarios."
-],
+        "Integración con APIs de portales de empleo para búsqueda automatizada basada en las preferencias del usuario",
+        "Generación de cover letters y optimización de CV en base a cada oferta"
+      ],
 
       "project5": [
         "Autenticacion con Laravel Sanctum",
@@ -122,19 +120,19 @@
     },
     "projectTitles": {
 
-      "project4": "API Rest de chatbot de IA",
+      "project4": "SkillPilot",
       "project5": "Dev-Horizon",
       "project6": "Vinoteca"
     },
     "projectDescriptions": {
       "project3": "Aplicacion móvil derivada de la web de EmpleaWorks, permite a los usuarios buscar empleo desde sus dispositivos móviles. Incluye notificaciones en tiempo real y una interfaz intuitiva.",
-      "project4": "API Rest de chatbot de IA  que utiliza la API de Google Gemini para simular el comportamiento de un LLM entrenado, ofreciendo múltiples posibilidades a los usuarios.",
+      "project4": "Herramienta que automatiza la búsqueda de ofertas laborales en múltiples portales y optimiza candidaturas mediante IA. Desarrollado con Laravel, React, Docker y agente de IA personalizado basado en Llama 3.3.",
       "project5": "Aplicación movil que cuenta con autenticación por tokens y se conecta a una API Rest desarollada con Laravel para servir los datos.",
       "project6": " con CRUD de vinos, gestion por categorias y carrito de compras. Incluye un sistema de autenticación y gestión de usuarios."
     },
     "projectLongDescriptions": {
       "project3": "Un dashboard de análisis de nivel empresarial que aprovecha la inteligencia artificial para proporcionar insights profundos sobre datos empresariales. La plataforma incluye modelos de machine learning para análisis predictivo, generación automatizada de reportes y visualización de datos en tiempo real. Construido con tecnologías modernas y diseñado para escalabilidad.",
-      "project4": "Un dashboard moderno de gestión de proyectos construido con Next.js y TypeScript. Las características incluyen gestión de tareas, herramientas de colaboración en equipo, actualizaciones en tiempo real, compartir archivos y reportes comprehensivos. La aplicación usa Prisma para gestión de base de datos e incluye control de acceso basado en roles.",
+      "project4": "Una herramienta avanzada de automatización laboral que revoluciona la búsqueda de empleo mediante inteligencia artificial. SkillPilot integra múltiples portales de empleo, automatiza la búsqueda de ofertas basada en preferencias del usuario y optimiza candidaturas mediante un agente de IA personalizado. Incluye generación inteligente de cover letters, optimización de CV para cada oferta específica y seguimiento completo del proceso de candidatura.",
       "project5": "Una plataforma colaborativa de desarrollo diseñada para equipos de programadores. Incluye herramientas de gestión de proyectos, control de versiones integrado, seguimiento de issues, planificación de sprints y métricas de rendimiento del equipo. Construida con tecnologías modernas para facilitar la colaboración efectiva.",
       "project6": "Un sistema integral de gestión de inventario específicamente diseñado para vinotecas y bodegas. Incluye seguimiento de stock, análisis de ventas, gestión de proveedores, alertas de reposición y reportes detallados. La aplicación está optimizada para el manejo de productos con características específicas como añada, región y variedad."
     },

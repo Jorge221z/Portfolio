@@ -39,8 +39,8 @@
       "description": "Mobile application derived from the EmpleaWorks website, allowing users to search for jobs from their mobile devices. Features real-time notifications and an intuitive interface."
     },
     "project4": {
-      "title": "AI Chatbot REST API",
-      "description": "AI Chatbot REST API that uses Google Gemini API to simulate LLM behavior, providing many possibilities to users."
+      "title": "SkillPilot",
+      "description": "Tool that automates job searching across multiple portals and optimizes applications using AI. Developed with Laravel, React, Docker and custom AI agent based on Llama 3.3."
     }
   },
   "projectsPage": {
@@ -101,10 +101,8 @@
         "Intuitive and modern interface"
       ],
       "project4": [
-        "Natural language responses through advanced text processing",
-        "Easy integration with web and mobile applications",
-        "Context management for coherent conversations",
-        "Scalability to support multiple simultaneous users"
+        "Integration with job portal APIs for automated searching based on user preferences",
+        "Cover letter generation and CV optimization based on each specific job offer"
       ],
       "project5": [
         "Authentication with Laravel Sanctum",
@@ -121,19 +119,19 @@
     },
     "projectTitles": {
       "project3": "Analytics Dashboard",
-      "project4": "AI Chatbot REST API",
+      "project4": "SkillPilot",
       "project5": "Dev-Horizon",
       "project6":  "Wine Store"
     },
     "projectDescriptions": {
       "project3": "Mobile application derived from the EmpleaWorks website, allows users to search for jobs from their mobile devices. Includes real-time notifications and an intuitive interface.",
-      "project4": "AI Chatbot REST API that uses Google Gemini API to simulate LLM behavior, providing many possibilities to users.",
+      "project4": "Tool that automates job searching across multiple portals and optimizes applications using AI. Developed with Laravel, React, Docker and custom AI agent based on Llama 3.3.",
       "project5": "Mobile application with token authentication that connects to a REST API developed with Laravel to serve data.",
       "project6": "Wine store with CRUD operations for wines, category management and shopping cart. Includes authentication system and user management."
     },
     "projectLongDescriptions": {
       "project3": "An enterprise-grade analytics dashboard that leverages artificial intelligence to provide deep insights into business data. The platform includes machine learning models for predictive analytics, automated report generation, and real-time data visualization. Built with modern technologies and designed for scalability.",
-      "project4": "An AI Chatbot REST API that uses Google Gemini API to simulate advanced language model behavior. Provides natural language responses through advanced text processing, easy integration with web and mobile applications, context management for coherent conversations, and scalability to support multiple simultaneous users.",
+      "project4": "An advanced job automation tool that revolutionizes job searching through artificial intelligence. SkillPilot integrates multiple job portals, automates job searching based on user preferences, and optimizes applications through a custom AI agent. Features intelligent cover letter generation, CV optimization for each specific offer, and complete application process tracking.",
       "project5": "A collaborative development platform designed for programming teams. Includes project management tools, integrated version control, issue tracking, sprint planning, and team performance metrics. Built with modern technologies to facilitate effective collaboration.",
       "project6": "A comprehensive inventory management system specifically designed for wine cellars and wineries. Includes stock tracking, sales analytics, supplier management, restock alerts, and detailed reporting. The application is optimized for handling products with specific characteristics like vintage, region, and variety."
     },
