@@ -3,11 +3,11 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Proyectos | Jorge Muñoz Castillo",
-  description: "Explora mis proyectos de desarrollo web. Aplicaciones modernas creadas con React, Next.js, Node.js y las últimas tecnologías.",
+  description: "Explora mis proyectos de desarrollo web. Aplicaciones modernas creadas con React, Laravel, IA y las últimas tecnologías.",
   openGraph: {
     title: "Proyectos | Jorge Muñoz Castillo",
-    description: "Explora mis proyectos de desarrollo web. Aplicaciones modernas creadas con React, Next.js, Node.js y las últimas tecnologías.",
-    images: ['/collage.jpg'],
+    description: "Explora mis proyectos de desarrollo web. Aplicaciones modernas creadas con React, Laravel, IA y las últimas tecnologías.",
+    images: ['/foto-seo.png'],
   },
 }
 

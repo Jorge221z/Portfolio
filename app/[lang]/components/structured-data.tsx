@@ -13,8 +13,8 @@ export function StructuredData({ lang }: StructuredDataProps) {
     "name": "Jorge Muñoz Castillo",
     "jobTitle": "Full Stack Developer",
     "description": lang === 'es' 
-      ? "Desarrollador Full Stack especializado en React, Next.js, Node.js y tecnologías modernas."
-      : "Full Stack Developer specialized in React, Next.js, Node.js and modern technologies.",
+      ? "Desarrollador Full Stack especializado en React, Laravel, IA y tecnologías modernas."
+      : "Full Stack Developer specialized in React, Laravel, AI and modern technologies.",
     "url": `${baseUrl}/${lang}`,
     "sameAs": [
       // Aquí puedes agregar tus perfiles de redes sociales cuando los tengas

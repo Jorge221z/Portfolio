@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: "Jorge Muñoz Castillo | Full Stack Developer",
-  description: "Desarrollador Full Stack especializado en React, Next.js, Node.js y tecnologías modernas. Explora mi portafolio con proyectos innovadores y soluciones web.",
+  description: "Desarrollador Full Stack especializado en React, Laravel, IA y tecnologías modernas. Explora mi portafolio con proyectos innovadores y soluciones web.",
   keywords: ["Jorge Muñoz Castillo", "Full Stack Developer", "React", "Next.js", "Node.js", "TypeScript", "Desarrollo Web", "Portafolio", "JavaScript", "Frontend", "Backend"],
   authors: [{ name: "Jorge Muñoz Castillo" }],
   creator: "Jorge Muñoz Castillo",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Jorge Muñoz Castillo | Full Stack Developer",
-    description: "Desarrollador Full Stack especializado en React, Next.js, Node.js y tecnologías modernas. Explora mi portafolio con proyectos innovadores.",
+    description: "Desarrollador Full Stack especializado en React, Laravel, IA y tecnologías modernas. Explora mi portafolio con proyectos innovadores.",
     url: '/',
     siteName: 'Jorge Muñoz Castillo Portfolio',
     locale: 'es_ES',
     type: 'website',
     images: [
       {
-        url: '/collage.jpg',
+        url: '/foto-seo.png',
         width: 1200,
         height: 630,
         alt: 'Jorge Muñoz Castillo - Full Stack Developer Portfolio',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Jorge Muñoz Castillo | Full Stack Developer",
-    description: "Desarrollador Full Stack especializado en React, Next.js, Node.js y tecnologías modernas.",
-    images: ['/collage.jpg'],
+    description: "Desarrollador Full Stack especializado en React, Laravel, IA y tecnologías modernas.",
+    images: ['/foto-seo.png'],
   },
   robots: {
     index: true,
