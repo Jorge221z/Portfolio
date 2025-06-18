@@ -183,6 +183,15 @@
       "institution": "Meta",
       "period": "Completed September 2024",
       "description": "Professional certification in data analysis, statistical methods, and data visualization using industry-standard tools and methodologies."
+    },
+    "languages": {
+      "title": "Languages",
+      "english": {
+        "title": "English B2 Certification & C1 in Progress",
+        "institution": "Cambridge English",
+        "period": "B2 certified - C1 ongoing",
+        "description": "Cambridge B2 certification completed. Currently pursuing C1 level. I have worked in international teams using English as the primary working language on European projects."
+      }
     }
   },
   "experience": {

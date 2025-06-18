@@ -125,6 +125,15 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
     },
   ]
 
+  const languages = [
+    {
+      title: dict.education.languages.english.title,
+      institution: dict.education.languages.english.institution,
+      period: dict.education.languages.english.period,
+      description: dict.education.languages.english.description,
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300 overflow-x-hidden">
       {/* Navigation */}
@@ -703,6 +712,32 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                 <p className="text-slate-600 dark:text-zinc-400">{edu.description}</p>
               </div>
             ))}
+
+            {/* Languages Subsection */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">{dict.education.languages.title}</h3>
+              <div className="space-y-6">
+                {languages.map((lang, index) => (
+                  <div
+                    key={index}
+                    className="bg-slate-50 dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-700 p-6 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                      <div className="flex-1">
+                        <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{lang.title}</h4>
+                        <p className="text-emerald-600 dark:text-emerald-400 font-medium">{lang.institution}</p>
+                      </div>
+                      <div className="mt-2 md:mt-0 md:ml-4">
+                        <span className="inline-block bg-slate-100 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 text-sm px-3 py-1 rounded-full">
+                          {lang.period}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-slate-600 dark:text-zinc-400">{lang.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

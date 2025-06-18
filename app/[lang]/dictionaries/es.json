@@ -184,6 +184,15 @@
       "institution": "Meta",
       "period": "Finalizado en Septiembre 2024",
       "description": "Certificación profesional en análisis de datos, métodos estadísticos y visualización de datos utilizando herramientas y metodologías estándar de la industria."
+    },
+    "languages": {
+      "title": "Idiomas",
+      "english": {
+        "title": "Certificación de Inglés B2 & C1 en progreso",
+        "institution": "Cambridge English",
+        "period": "B2 certificado - C1 en curso",
+        "description": "Certificación B2 de Cambridge completada. Actualmente cursando el nivel C1. He trabajado en equipos internacionales utilizando inglés como idioma de trabajo en proyectos europeos."
+      }
     }
   },
   "experience": {
