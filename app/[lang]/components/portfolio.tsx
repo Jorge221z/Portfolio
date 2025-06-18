@@ -22,6 +22,7 @@ import {
   ArrowRight,
   Menu,
   X,
+  Download,
 } from "lucide-react"
 import { LanguageSelector } from "./language-selector"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -164,22 +165,73 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             </nav>
 
             {/* Desktop Controls */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <LanguageSelector currentLang={lang} dict={dict} />
-              <ThemeToggle />
+            <div className="hidden lg:flex items-center space-x-6">
+              <div className="flex items-center space-x-4">
+                <LanguageSelector currentLang={lang} dict={dict} />
+                <ThemeToggle />
+              </div>
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300"
+              >
+                <a
+                  href={lang === "es" ? "/Jorge_Munoz_CV.pdf" : "/Jorge_Munoz_CV_EN.pdf"}
+                  download
+                  className="flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  CV
+                </a>
+              </Button>
             </div>
 
             {/* Tablet Controls - Theme and Language only */}
-            <div className="hidden md:flex lg:hidden items-center space-x-4">
-              <LanguageSelector currentLang={lang} dict={dict} />
-              <ThemeToggle />
+            <div className="hidden md:flex lg:hidden items-center space-x-6">
+              <div className="flex items-center space-x-4">
+                <LanguageSelector currentLang={lang} dict={dict} />
+                <ThemeToggle />
+              </div>
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300"
+              >
+                <a
+                  href={lang === "es" ? "/Jorge_Munoz_CV.pdf" : "/Jorge_Munoz_CV_EN.pdf"}
+                  download
+                  className="flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  CV
+                </a>
+              </Button>
             </div>
 
             {/* Mobile Controls - Centered layout */}
             <div className="md:hidden flex items-center justify-center flex-1">
-              <div className="flex items-center space-x-3">
-                <LanguageSelector currentLang={lang} dict={dict} />
-                <ThemeToggle />
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3">
+                  <LanguageSelector currentLang={lang} dict={dict} />
+                  <ThemeToggle />
+                </div>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300"
+                >
+                  <a
+                    href={lang === "es" ? "/Jorge_Munoz_CV.pdf" : "/Jorge_Munoz_CV_EN.pdf"}
+                    download
+                    className="flex items-center gap-1"
+                  >
+                    <Download className="h-3 w-3" />
+                    CV
+                  </a>
+                </Button>
               </div>
             </div>
 
