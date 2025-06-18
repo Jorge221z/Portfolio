@@ -257,6 +257,25 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
                   {dict.nav[section]}
                 </button>
               ))}
+              
+              {/* CV Download Button */}
+              <div className="pt-2 border-t border-slate-200 dark:border-zinc-700">
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="w-full bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300"
+                >
+                  <a
+                    href={lang === "es" ? "/Jorge_Munoz_CV.pdf" : "/Jorge_Munoz_CV_EN.pdf"}
+                    download
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <Download className="h-4 w-4" />
+                    {lang === "es" ? "Descargar CV" : "Download CV"}
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         )}
