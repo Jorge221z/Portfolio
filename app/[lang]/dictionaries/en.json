@@ -219,5 +219,35 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "linksightPrivacy": {
+    "metaTitle": "LinkSight Privacy Policy | Jorge Muñoz Castillo",
+    "metaDescription": "Privacy Policy for the LinkSight mobile application.",
+    "title": "Privacy Policy",
+    "appName": "LinkSight",
+    "lastUpdated": "Last updated: June 24, 2026",
+    "backButton": "Back to Portfolio",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "This Privacy Policy governs your use of the mobile application LinkSight (\"the Application\"). The Application is designed to provide utility services. Your privacy is of paramount importance to us."
+      },
+      "dataCollection": {
+        "title": "Data Collection & Authentication",
+        "content": "For authentication and user identification purposes, we use Google OAuth. When you sign in to LinkSight using your Google Account, we collect your email address and basic profile information (such as your name and profile picture). We do not collect or store any other personal information from your Google account."
+      },
+      "payments": {
+        "title": "Payments & Subscriptions",
+        "content": "We offer in-app subscriptions to unlock premium features. Payments are securely processed via Google Play Billing and managed through RevenueCat. We do not collect, process, or store your credit card or financial information on our servers. All financial transactions are subject to Google Play's Privacy Policy."
+      },
+      "dataUsage": {
+        "title": "Data Usage & Sharing",
+        "content": "We process your data solely to provide, maintain, and improve the Application's features. We do not sell, rent, trade, or share your personal data with third parties for marketing or promotional purposes. Your data is kept strictly confidential."
+      },
+      "contact": {
+        "title": "Contact & Data Deletion",
+        "content": "If you have any questions about this Privacy Policy, or if you wish to request the deletion of your account and associated personal data, please contact us at jorgemunoz.labs@gmail.com. We will process your deletion request promptly."
+      }
+    }
   }
 }

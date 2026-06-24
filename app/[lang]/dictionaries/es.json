@@ -220,5 +220,35 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados."
+  },
+  "linksightPrivacy": {
+    "metaTitle": "Política de Privacidad de LinkSight | Jorge Muñoz Castillo",
+    "metaDescription": "Política de Privacidad para la aplicación móvil LinkSight.",
+    "title": "Política de Privacidad",
+    "appName": "LinkSight",
+    "lastUpdated": "Última actualización: 24 de junio de 2026",
+    "backButton": "Volver al Portafolio",
+    "sections": {
+      "introduction": {
+        "title": "Introducción",
+        "content": "Esta Política de Privacidad rige el uso de la aplicación móvil LinkSight (\"la Aplicación\"). Tu privacidad es de suma importancia para nosotros."
+      },
+      "dataCollection": {
+        "title": "Recopilación de Datos y Autenticación",
+        "content": "Con fines de autenticación e identificación del usuario, utilizamos Google OAuth. Al iniciar sesión en LinkSight con tu cuenta de Google, recopilamos tu dirección de correo electrónico e información básica de tu perfil (como tu nombre y foto de perfil). No recopilamos ni almacenamos ninguna otra información personal de tu cuenta de Google."
+      },
+      "payments": {
+        "title": "Pagos y Suscripciones",
+        "content": "Ofrecemos suscripciones dentro de la aplicación para desbloquear funciones premium. Los pagos se procesan de forma segura a través de Google Play Billing y se gestionan con RevenueCat. No recopilamos, procesamos ni almacenamos la información de tu tarjeta de crédito o datos financieros en nuestros servidores. Todas las transacciones financieras están sujetas a la Política de Privacidad de Google Play."
+      },
+      "dataUsage": {
+        "title": "Uso y Uso Compartido de Datos",
+        "content": "Procesamos tus datos únicamente para proporcionar, mantener y mejorar las funciones de la Aplicación. No vendemos, alquilamos, comercializamos ni compartimos tus datos personales con terceros con fines publicitarios o de marketing. Tus datos se mantienen en estricta confidencialidad."
+      },
+      "contact": {
+        "title": "Contacto y Eliminación de Datos",
+        "content": "Si tienes alguna pregunta sobre esta Política de Privacidad, o si deseas solicitar la eliminación de tu cuenta y de los datos personales asociados, por favor ponte en contacto con nosotros en jorgemunoz.labs@gmail.com. Procesaremos tu solicitud de eliminación a la brevedad."
+      }
+    }
   }
 }
