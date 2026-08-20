@@ -1,0 +1,25 @@
+# Jorge Muñoz Castillo - Portfolio
+
+> Full Stack Web & Mobile Developer specializing in React, Next.js, TypeScript, Laravel, and Native Android (Kotlin).
+
+## Overview
+Jorge Muñoz Castillo is a software developer focused on building modern web and mobile applications from concept to production. Experienced in REST API architecture, AI integrations, and mobile engineering.
+
+## Featured Projects
+- **LinkSight** (https://linksightapp.com): Native Android mobile application for point-to-point RF microwave link planning and Fresnel zone clearance calculations using SRTM90m global topography. Available on Google Play Store.
+- **Script2me** (https://script2.me): Web platform that accelerates web and mobile development using Google Gemini AI, featuring real-time code refactoring and security scanner.
+- **EmpleaWorks** (https://emplea.works): Regional job board platform and companion native mobile app for candidates and employers in Murcia, Spain.
+- **SkillPilot** (https://skillpilot.es): Automated job search and AI application assistant developed with Laravel, React, Docker, and Llama 3.3.
+
+## Skills & Technologies
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS, Vue.js, JavaScript
+- **Backend**: Laravel, PHP, Node.js, Express, FastAPI, WordPress, Moodle
+- **Mobile**: Android Native (Kotlin), React Native, Expo, RevenueCat, Google Play Billing, EAS CI/CD
+- **DevOps & Tools**: Docker, Google Cloud Platform, Git, MySQL, MongoDB, Linux VPS, Bash Scripting
+
+## Contact & Links
+- Portfolio: https://jorgemunoz.pro
+- GitHub: https://github.com/Jorge221z
+- LinkedIn: https://www.linkedin.com/in/jorge-muñoz-castillo
+- Email: jorgemunozcast12@gmail.com
+- Location: Yecla, Murcia, Spain
