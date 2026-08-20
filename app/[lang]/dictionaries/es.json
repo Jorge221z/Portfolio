@@ -41,6 +41,10 @@
     "project4": {
       "title": "SkillPilot",
       "description": "Herramienta que automatiza la búsqueda de ofertas laborales en múltiples portales y optimiza candidaturas mediante IA. Desarrollado con Laravel, React, Docker y agente de IA personalizado basado en Llama 3.3."
+    },
+    "linksight": {
+      "title": "LinkSight",
+      "description": "App móvil nativa Android para planificación de radioenlaces punto a punto (RF) y cálculo instantáneo de zonas de Fresnel con datos topográficos globales SRTM90m."
     }
   },
   "projectsPage": {
@@ -116,25 +120,33 @@
         "Análisis de ventas",
         "Gestión de proveedores",
         "Alertas de reposición"
+      ],
+      "project7": [
+        "Cálculo instantáneo de línea de vista (LOS) y perfiles topográficos con SRTM90m",
+        "Análisis de despeje de zonas de Fresnel (2.4 GHz, 5.8 GHz, Sub-GHz 868 MHz)",
+        "Generación y exportación de informes técnicos de viabilidad en PDF profesional",
+        "Autenticación con Google OAuth y compras integradas con RevenueCat / Google Play Billing"
       ]
     },
     "projectTitles": {
-
       "project4": "SkillPilot",
       "project5": "Dev-Horizon",
-      "project6": "Vinoteca"
+      "project6": "Vinoteca",
+      "project7": "LinkSight"
     },
     "projectDescriptions": {
       "project3": "Aplicacion móvil derivada de la web de EmpleaWorks, permite a los usuarios buscar empleo desde sus dispositivos móviles. Incluye notificaciones en tiempo real y una interfaz intuitiva.",
       "project4": "Herramienta que automatiza la búsqueda de ofertas laborales en múltiples portales y optimiza candidaturas mediante IA. Desarrollado con Laravel, React, Docker y agente de IA personalizado basado en Llama 3.3.",
       "project5": "Aplicación movil que cuenta con autenticación por tokens y se conecta a una API Rest desarollada con Laravel para servir los datos.",
-      "project6": " con CRUD de vinos, gestion por categorias y carrito de compras. Incluye un sistema de autenticación y gestión de usuarios."
+      "project6": " con CRUD de vinos, gestion por categorias y carrito de compras. Incluye un sistema de autenticación y gestión de usuarios.",
+      "project7": "App móvil nativa Android para planificación de enlaces de radiofrecuencia (RF) punto a punto y cálculo de zonas de Fresnel con perfiles de elevación globales SRTM90m."
     },
     "projectLongDescriptions": {
       "project3": "Un dashboard de análisis de nivel empresarial que aprovecha la inteligencia artificial para proporcionar insights profundos sobre datos empresariales. La plataforma incluye modelos de machine learning para análisis predictivo, generación automatizada de reportes y visualización de datos en tiempo real. Construido con tecnologías modernas y diseñado para escalabilidad.",
       "project4": "Una herramienta avanzada de automatización laboral que revoluciona la búsqueda de empleo mediante inteligencia artificial. SkillPilot integra múltiples portales de empleo, automatiza la búsqueda de ofertas basada en preferencias del usuario y optimiza candidaturas mediante un agente de IA personalizado. Incluye generación inteligente de cover letters, optimización de CV para cada oferta específica y seguimiento completo del proceso de candidatura.",
       "project5": "Una plataforma colaborativa de desarrollo diseñada para equipos de programadores. Incluye herramientas de gestión de proyectos, control de versiones integrado, seguimiento de issues, planificación de sprints y métricas de rendimiento del equipo. Construida con tecnologías modernas para facilitar la colaboración efectiva.",
-      "project6": "Un sistema integral de gestión de inventario específicamente diseñado para vinotecas y bodegas. Incluye seguimiento de stock, análisis de ventas, gestión de proveedores, alertas de reposición y reportes detallados. La aplicación está optimizada para el manejo de productos con características específicas como añada, región y variedad."
+      "project6": "Un sistema integral de gestión de inventario específicamente diseñado para vinotecas y bodegas. Incluye seguimiento de stock, análisis de ventas, gestión de proveedores, alertas de reposición y reportes detallados. La aplicación está optimizada para el manejo de productos con características específicas como añada, región y variedad.",
+      "project7": "LinkSight es una herramienta profesional de ingeniería de radiofrecuencia (RF) para Android diseñada para operadores WISP, redes Meshtastic/LoRa y pilotos de drones BVLOS. Permite calcular perfiles de elevación topográfica con resolución de 90 metros en milisegundos, verificar la línea de vista (LOS), evaluar el despeje de la zona de Fresnel en diversas frecuencias y exportar informes de viabilidad en PDF profesional directamente desde el smartphone."
     },
     "teamInfo": {
       "individualProject": "Proyecto Individual",

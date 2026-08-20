@@ -44,6 +44,38 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
 
   const projects = [
     {
+      id: 7,
+      title: dict.projectsPage?.projectTitles?.project7 || "LinkSight",
+      description:
+        dict.projectsPage?.projectDescriptions?.project7 ||
+        dict.projects?.linksight?.description ||
+        "Native Android mobile app for point-to-point RF microwave link planning and instant Fresnel zone calculations.",
+      longDescription:
+        dict.projectsPage?.projectLongDescriptions?.project7 ||
+        "Professional RF engineering mobile tool for Android engineered for WISP operators, Meshtastic/LoRa networks, and BVLOS drone pilots. Calculates 90-meter resolution terrain elevation profiles in sub-second latency, evaluates line-of-sight (LOS) and Fresnel zone clearance, and generates exportable professional PDF feasibility reports directly from your phone.",
+      image: "/logo_margins.jpeg",
+      images: [
+        "/logo_margins.jpeg",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
+      tech: ["Android Nativo", "Kotlin", "RevenueCat", "Google Play Billing", "SRTM90m"],
+      category: "mobile",
+      github: "https://github.com/Jorge221z",
+      live: "https://linksightapp.com",
+      date: "2026",
+      duration: `3 ${dict.projectsPage?.months || "months"}`,
+      team: dict.projectsPage?.teamInfo?.individualProject || dict.projectsPage?.individualProject || "Individual Project",
+      status: "completed",
+      buttonType: "website",
+      features: dict.projectsPage?.features?.project7 || [
+        "Cálculo instantáneo de línea de vista (LOS) y perfiles topográficos con SRTM90m",
+        "Análisis de despeje de zonas de Fresnel (2.4 GHz, 5.8 GHz, Sub-GHz 868 MHz)",
+        "Generación y exportación de informes técnicos de viabilidad en PDF profesional",
+        "Autenticación con Google OAuth y compras integradas con RevenueCat / Google Play Billing",
+      ],
+    },
+    {
       id: 1,
       title: dict.projects.project1.title,
       description: dict.projects.project1.description,
@@ -293,23 +325,45 @@ export default function ProjectsPage({ dict, lang }: ProjectsPageProps) {
                 key={project.id}
                 className="group overflow-hidden border border-slate-200 dark:border-zinc-700 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg bg-white dark:bg-zinc-800"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className={`w-full h-full ${project.id === 4 ? 'object-cover object-center' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge className={`${getStatusColor(project.status)} border-0`}>
-                      {project.status === "completed"
-                        ? dict.projectsPage?.completed || "Completed"
-                        : dict.projectsPage?.inProgress || "In Progress"}
-                    </Badge>
+                {project.id === 7 || project.title === "LinkSight" || project.image === "/logo_margins.jpeg" ? (
+                  <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-zinc-900/60 flex items-center justify-center p-3">
+                    <div className="relative h-full aspect-square rounded-2xl overflow-hidden shadow-sm">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        sizes="200px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute top-4 right-4 z-10">
+                      <Badge className={`${getStatusColor(project.status)} border-0`}>
+                        {project.status === "completed"
+                          ? dict.projectsPage?.completed || "Completed"
+                          : dict.projectsPage?.inProgress || "In Progress"}
+                      </Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                ) : (
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      width={600}
+                      height={400}
+                      className={`w-full h-full ${project.id === 4 ? 'object-cover object-center' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className={`${getStatusColor(project.status)} border-0`}>
+                        {project.status === "completed"
+                          ? dict.projectsPage?.completed || "Completed"
+                          : dict.projectsPage?.inProgress || "In Progress"}
+                      </Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                )}
 
                 <CardHeader>
                   <div className="flex items-start justify-between">

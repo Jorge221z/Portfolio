@@ -41,6 +41,10 @@
     "project4": {
       "title": "SkillPilot",
       "description": "Tool that automates job searching across multiple portals and optimizes applications using AI. Developed with Laravel, React, Docker and custom AI agent based on Llama 3.3."
+    },
+    "linksight": {
+      "title": "LinkSight",
+      "description": "Native Android mobile app for point-to-point RF microwave link planning and instant Fresnel zone calculations using global SRTM90m topography."
     }
   },
   "projectsPage": {
@@ -115,25 +119,34 @@
         "Sales analytics",
         "Supplier management",
         "Restock alerts"
+      ],
+      "project7": [
+        "Instant point-to-point line-of-sight (LOS) & elevation profiles via SRTM90m",
+        "Fresnel zone clearance analysis across frequencies (2.4GHz, 5.8GHz, LoRa/868MHz)",
+        "One-tap export of professional PDF feasibility study reports",
+        "Secure Google OAuth login and in-app subscriptions with RevenueCat & Google Play Billing"
       ]
     },
     "projectTitles": {
       "project3": "Analytics Dashboard",
       "project4": "SkillPilot",
       "project5": "Dev-Horizon",
-      "project6":  "Wine Store"
+      "project6": "Wine Store",
+      "project7": "LinkSight"
     },
     "projectDescriptions": {
       "project3": "Mobile application derived from the EmpleaWorks website, allows users to search for jobs from their mobile devices. Includes real-time notifications and an intuitive interface.",
       "project4": "Tool that automates job searching across multiple portals and optimizes applications using AI. Developed with Laravel, React, Docker and custom AI agent based on Llama 3.3.",
       "project5": "Mobile application with token authentication that connects to a REST API developed with Laravel to serve data.",
-      "project6": "Wine store with CRUD operations for wines, category management and shopping cart. Includes authentication system and user management."
+      "project6": "Wine store with CRUD operations for wines, category management and shopping cart. Includes authentication system and user management.",
+      "project7": "Native Android mobile app for point-to-point RF microwave link planning and instant Fresnel zone calculations using global topography."
     },
     "projectLongDescriptions": {
       "project3": "An enterprise-grade analytics dashboard that leverages artificial intelligence to provide deep insights into business data. The platform includes machine learning models for predictive analytics, automated report generation, and real-time data visualization. Built with modern technologies and designed for scalability.",
       "project4": "An advanced job automation tool that revolutionizes job searching through artificial intelligence. SkillPilot integrates multiple job portals, automates job searching based on user preferences, and optimizes applications through a custom AI agent. Features intelligent cover letter generation, CV optimization for each specific offer, and complete application process tracking.",
       "project5": "A collaborative development platform designed for programming teams. Includes project management tools, integrated version control, issue tracking, sprint planning, and team performance metrics. Built with modern technologies to facilitate effective collaboration.",
-      "project6": "A comprehensive inventory management system specifically designed for wine cellars and wineries. Includes stock tracking, sales analytics, supplier management, restock alerts, and detailed reporting. The application is optimized for handling products with specific characteristics like vintage, region, and variety."
+      "project6": "A comprehensive inventory management system specifically designed for wine cellars and wineries. Includes stock tracking, sales analytics, supplier management, restock alerts, and detailed reporting. The application is optimized for handling products with specific characteristics like vintage, region, and variety.",
+      "project7": "Professional RF engineering mobile tool for Android engineered for WISP operators, Meshtastic/LoRa networks, and BVLOS drone pilots. Calculates 90-meter resolution terrain elevation profiles in sub-second latency, evaluates line-of-sight (LOS) and Fresnel zone clearance, and generates exportable professional PDF feasibility reports directly from your phone."
     },
     "teamInfo": {
       "individualProject": "Individual Project",

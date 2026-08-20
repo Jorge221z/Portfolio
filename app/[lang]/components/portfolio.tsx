@@ -71,11 +71,19 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
   const skills = {
     frontend: ["React", "TypeScript", "Tailwind CSS", "Vue.js", "Next.js"],
     backend: ["Laravel", "Node.js", "Express", "PHP", "FastAPI", "WordPress", "Moodle"],
-    mobile: ["React Native", "Expo", "CI/CD con EAS", "Firebase"],
+    mobile: ["Android Nativo", "Kotlin", "React Native", "Expo", "CI/CD con EAS", "Firebase"],
     tools: ["Docker", "Google Cloud", "Git", "Figma", "MongoDB", 'SQL'],
   }
 
   const projects = [
+    {
+      title: "LinkSight",
+      description: dict.projects.linksight?.description || dict.projectsPage?.projectDescriptions?.project7,
+      image: "/logo_margins.jpeg",
+      tech: ["Android Nativo", "Kotlin", "Google Play Billing", "RevenueCat"],
+      github: "https://github.com/Jorge221z",
+      live: "https://linksightapp.com",
+    },
     {
       title: dict.projects.project1.title,
       description: dict.projects.project1.description,
@@ -433,7 +441,7 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
 
                   <div className="absolute top-16 right-2 z-10 animate-float" style={{ animationDelay: "0.5s" }}>
                     <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-zinc-200/50 dark:border-zinc-700/50 w-24 h-20 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110">
-                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">6+</div>
+                      <div className="text-xl font-bold text-emerald-600 dark:text-emerald-400">7+</div>
                       <div className="text-xs text-slate-600 dark:text-zinc-400">{dict.hero.projects}</div>
                     </div>
                   </div>
@@ -501,22 +509,37 @@ export default function Portfolio({ dict, lang }: PortfolioProps) {
             <p className="text-slate-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md whitespace-pre-line">{dict.projects.description}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
                 className="group bg-white dark:bg-zinc-800 rounded-xl overflow-hidden border border-slate-200 dark:border-zinc-700 hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={500}
-                    height={300}
-                    className={`w-full h-full ${index === 1 ? 'object-cover' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
+                {project.title === "LinkSight" || project.image === "/logo_margins.jpeg" ? (
+                  <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-zinc-900/60 flex items-center justify-center p-3">
+                    <div className="relative h-full aspect-square rounded-2xl overflow-hidden shadow-sm">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        sizes="200px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  </div>
+                ) : (
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      width={500}
+                      height={300}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                )}
 
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
