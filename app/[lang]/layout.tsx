@@ -44,6 +44,8 @@ export async function generateMetadata({
       "Android Developer",
       "Kotlin",
       "LinkSight",
+      "Mobile RF planning",
+      "Mobile RF calculator",
       "Script2me",
       "React",
       "Next.js",
